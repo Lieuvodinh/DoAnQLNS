@@ -1,0 +1,68 @@
+﻿@model DoAnQLNS.Models.ChiTietKhenThuong
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>TẠO MỚI CHI TIẾT KHEN THƯỞNG</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDHopDong, "Mã hợp đồng", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDHopDong", String.Empty)
+                @Html.ValidationMessageFor(model => model.IDHopDong)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDKhenThuong, "Mã khen thưởng", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDKhenThuong", String.Empty)
+                @Html.ValidationMessageFor(model => model.IDKhenThuong)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgayQuyetDinh, "Ngày quyết định", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NgayQuyetDinh)
+                @Html.ValidationMessageFor(model => model.NgayQuyetDinh)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NoiDung, "Nội dung", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NoiDung)
+                @Html.ValidationMessageFor(model => model.NoiDung)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.QuyetDinhSo, "Quyết định số", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.QuyetDinhSo)
+                @Html.ValidationMessageFor(model => model.QuyetDinhSo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Tạo mới" class="btn btn-default mybuttonSubmit" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="col-md-offset-2 col-md-10">
+    <button class="mybuttonBack">@Html.ActionLink("Trở lại trang danh sách khen thưởng", "DSCTKT")</button> 
+</div>

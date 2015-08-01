@@ -4,20 +4,20 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>CHỈNH SỬA THÔNG TIN CHỨC VỤ</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ChucVu</h4>
+      
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.IDChucVu)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TenChucVu, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TenChucVu, "Tên chức vụ", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TenChucVu)
                 @Html.ValidationMessageFor(model => model.TenChucVu)
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MoTa, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MoTa, "Mô tả chức vụ", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.MoTa)
                 @Html.ValidationMessageFor(model => model.MoTa)
@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PhuCap, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PhuCap, "Phụ cấp", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.PhuCap)
                 @Html.ValidationMessageFor(model => model.PhuCap)
@@ -42,12 +42,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default mybuttonSubmit" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="col-md-offset-2 col-md-10">
+        <button class="mybuttonBack">@Html.ActionLink("Trở về trang danh sách chức vụ", "DSCV")</button>
 </div>

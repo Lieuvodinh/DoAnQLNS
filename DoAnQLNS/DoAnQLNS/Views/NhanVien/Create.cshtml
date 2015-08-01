@@ -17,7 +17,7 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IDNhanVien, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IDNhanVien, "Mã nhân viên", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.IDNhanVien)
                 @Html.ValidationMessageFor(model => model.IDNhanVien)
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.HoTen, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.HoTen, "Họ và tên", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.HoTen)
                 @Html.ValidationMessageFor(model => model.HoTen)
@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CMND, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CMND, "Số CMND", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.CMND)
                 @Html.ValidationMessageFor(model => model.CMND)
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.GioiTinh, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.GioiTinh, "Giới tính", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.GioiTinh)
                 @Html.ValidationMessageFor(model => model.GioiTinh)
@@ -49,7 +49,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NgaySinh, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NgaySinh, "Ngày sinh", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NgaySinh)
                 @Html.ValidationMessageFor(model => model.NgaySinh)
@@ -57,7 +57,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NoiSinh, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NoiSinh, "Nơi sinh", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NoiSinh)
                 @Html.ValidationMessageFor(model => model.NoiSinh)
@@ -65,7 +65,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.QueQuan, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.QueQuan, "Quê quán", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.QueQuan)
                 @Html.ValidationMessageFor(model => model.QueQuan)
@@ -73,7 +73,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DiaChi, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DiaChi, "Địa chỉ", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DiaChi)
                 @Html.ValidationMessageFor(model => model.DiaChi)
@@ -81,7 +81,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.HinhAnh, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.HinhAnh, "Hình ảnh", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.HinhAnh)
                 @Html.ValidationMessageFor(model => model.HinhAnh)
@@ -95,10 +95,10 @@
         </div>
     </div>
 }
-<div>
+
     <div class="col-md-offset-2 col-md-10">
-        <button class="mybuttonBack">@Html.ActionLink("Trở về lại trang danh sách nhân viên", "Index")</button>
+        <button class="mybuttonBack">@Html.ActionLink("Trở về lại trang danh sách nhân viên", "DSNV")</button>
     </div>
-</div>
+
 
 

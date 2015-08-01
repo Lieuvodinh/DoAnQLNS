@@ -1,0 +1,62 @@
+﻿@model DoAnQLNS.Models.ChiTietKhenThuong
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="mywarningMessage"><h2>Bạn có chắc chắn là bạn sẽ xóa chức vụ này khỏi cơ sở dữ liệu không? Sau khi xóa thì sẽ không phục hồi lại được!!</h2></div>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="form-group">
+            @Html.DisplayNameFor(model => model.NgayQuyetDinh)
+        </dt>
+
+        <dd class="form-group">
+            @Html.DisplayFor(model => model.NgayQuyetDinh)
+        </dd>
+
+        <dt class="form-group">
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </dt>
+
+        <dd class="form-group">
+            @Html.DisplayFor(model => model.NoiDung)
+        </dd>
+
+        <dt class="form-group">
+            @Html.DisplayNameFor(model => model.QuyetDinhSo)
+        </dt>
+
+        <dd class="form-group">
+            @Html.DisplayFor(model => model.QuyetDinhSo)
+        </dd>
+
+        <dt class="form-group">
+            @Html.DisplayNameFor(model => model.HoDongLaoDong.IDNhanVien)
+        </dt>
+
+        <dd class="form-group">
+            @Html.DisplayFor(model => model.HoDongLaoDong.IDNhanVien)
+        </dd>
+
+        <dt class="form-group">
+            @Html.DisplayNameFor(model => model.LoaiKhenThuong.TenKhenThuong)
+        </dt>
+
+        <dd class="form-group">
+            @Html.DisplayFor(model => model.LoaiKhenThuong.TenKhenThuong)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <button class="btn btn-default">@Html.ActionLink("Trở về trang danh sách khen thưởng", "DSCTKT")</button>
+        </div>
+    }
+</div>

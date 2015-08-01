@@ -4,9 +4,8 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<div class="mywarningMessage"><h2>Bạn có chắc chắn là bạn sẽ xóa nhân viên này khỏi cơ sở dữ liệu không? Sau khi xóa thì sẽ không phục hồi lại được!!</h2></div>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>NhanVien</h4>
     <hr />
@@ -81,8 +80,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            <button class="btn btn-default">@Html.ActionLink("Trở về trang danh sách nhân viên", "DSNV")</button> 
         </div>
     }
 </div>

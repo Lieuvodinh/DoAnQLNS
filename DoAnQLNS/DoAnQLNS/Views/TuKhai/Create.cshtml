@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TuNgay, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TuNgay, "Từ ngày", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TuNgay)
                 @Html.ValidationMessageFor(model => model.TuNgay)
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DenNgay, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DenNgay, "Đến ngày", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DenNgay)
                 @Html.ValidationMessageFor(model => model.DenNgay)
@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NoiDung, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NoiDung, "Nội dung", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NoiDung)
                 @Html.ValidationMessageFor(model => model.NoiDung)
@@ -56,6 +56,6 @@
 }
 <div>
     <div class="col-md-offset-2 col-md-10">
-        <button class="mybuttonBack">@Html.ActionLink("Trở về lại trang danh sách tự khai", "Index")</button>
+        <button class="mybuttonBack">@Html.ActionLink("Trở về lại trang danh sách tự khai", "DSTK")</button>
     </div>
 </div>

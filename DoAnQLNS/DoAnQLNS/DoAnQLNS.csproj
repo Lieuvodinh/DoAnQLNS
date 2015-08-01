@@ -161,8 +161,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChiTietKhenThuongController.cs" />
     <Compile Include="Controllers\ChucVuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HopDongLaoDongController.cs" />
+    <Compile Include="Controllers\LoaiHopDongController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
     <Compile Include="Controllers\TuKhaiController.cs" />
     <Compile Include="Global.asax.cs">
@@ -576,20 +579,29 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\NhanVien\Create.cshtml" />
     <Content Include="Views\NhanVien\Delete.cshtml" />
-    <Content Include="Views\NhanVien\Details.cshtml" />
     <Content Include="Views\NhanVien\Edit.cshtml" />
-    <Content Include="Views\NhanVien\Index.cshtml" />
+    <Content Include="Views\NhanVien\DSNV.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ChucVu\Create.cshtml" />
     <Content Include="Views\ChucVu\Delete.cshtml" />
-    <Content Include="Views\ChucVu\Details.cshtml" />
     <Content Include="Views\ChucVu\Edit.cshtml" />
-    <Content Include="Views\ChucVu\Index.cshtml" />
+    <Content Include="Views\ChucVu\DSCV.cshtml" />
     <Content Include="Views\TuKhai\Create.cshtml" />
     <Content Include="Views\TuKhai\Delete.cshtml" />
-    <Content Include="Views\TuKhai\Details.cshtml" />
     <Content Include="Views\TuKhai\Edit.cshtml" />
-    <Content Include="Views\TuKhai\Index.cshtml" />
+    <Content Include="Views\TuKhai\DSTK.cshtml" />
+    <Content Include="Views\ChiTietKhenThuong\Create.cshtml" />
+    <Content Include="Views\ChiTietKhenThuong\Delete.cshtml" />
+    <Content Include="Views\ChiTietKhenThuong\Edit.cshtml" />
+    <Content Include="Views\ChiTietKhenThuong\DSCTKT.cshtml" />
+    <Content Include="Views\HopDongLaoDong\Create.cshtml" />
+    <Content Include="Views\HopDongLaoDong\Delete.cshtml" />
+    <Content Include="Views\HopDongLaoDong\Edit.cshtml" />
+    <Content Include="Views\HopDongLaoDong\DSHDLD.cshtml" />
+    <Content Include="Views\LoaiHopDong\Create.cshtml" />
+    <Content Include="Views\LoaiHopDong\Delete.cshtml" />
+    <Content Include="Views\LoaiHopDong\Edit.cshtml" />
+    <Content Include="Views\LoaiHopDong\DSLHD.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

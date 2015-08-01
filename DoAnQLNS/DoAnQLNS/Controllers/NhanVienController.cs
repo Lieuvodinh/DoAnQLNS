@@ -15,7 +15,7 @@ namespace DoAnQLNS.Controllers
         private QLNSDataEntities db = new QLNSDataEntities();
 
         // GET: /NhanVien/
-        public ActionResult Index()
+        public ActionResult DSNV()
         {
             return View(db.NhanViens.ToList());
         }
@@ -52,7 +52,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.NhanViens.Add(nhanvien);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DSNV");
             }
 
             return View(nhanvien);
@@ -84,7 +84,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.Entry(nhanvien).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DSNV");
             }
             return View(nhanvien);
         }
@@ -112,7 +112,7 @@ namespace DoAnQLNS.Controllers
             NhanVien nhanvien = db.NhanViens.Find(id);
             db.NhanViens.Remove(nhanvien);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("DSNV");
         }
 
         protected override void Dispose(bool disposing)

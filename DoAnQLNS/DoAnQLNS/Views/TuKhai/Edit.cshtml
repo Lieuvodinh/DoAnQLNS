@@ -4,20 +4,20 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>SỬA THÔNG TIN TỰ KHAI</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>BangTuKhai</h4>
+        
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.IDTuKhai)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IDNhanVien, "IDNhanVien", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IDNhanVien, "Têm nhân viên", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IDNhanVien", String.Empty)
                 @Html.ValidationMessageFor(model => model.IDNhanVien)
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TuNgay, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TuNgay, "Từ ngày", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TuNgay)
                 @Html.ValidationMessageFor(model => model.TuNgay)
@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DenNgay, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DenNgay, "Đến ngày", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DenNgay)
                 @Html.ValidationMessageFor(model => model.DenNgay)
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NoiDung, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NoiDung, "Nội dung", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NoiDung)
                 @Html.ValidationMessageFor(model => model.NoiDung)
@@ -50,12 +50,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Lưu thay đổi" class="btn btn-default mybuttonSubmit" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="col-md-offset-2 col-md-10">
+    <button class="mybuttonBack">@Html.ActionLink("Trở về trang danh sách tự khai", "DSTK")</button>
 </div>

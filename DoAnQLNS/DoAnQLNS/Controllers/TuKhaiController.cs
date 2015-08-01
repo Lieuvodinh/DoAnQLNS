@@ -15,7 +15,7 @@ namespace DoAnQLNS.Controllers
         private QLNSDataEntities db = new QLNSDataEntities();
 
         // GET: /TuKhai/
-        public ActionResult Index()
+        public ActionResult DSTK()
         {
             var bangtukhais = db.BangTuKhais.Include(b => b.NhanVien);
             return View(bangtukhais.ToList());
@@ -54,7 +54,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.BangTuKhais.Add(bangtukhai);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DSTK");
             }
 
             ViewBag.IDNhanVien = new SelectList(db.NhanViens, "IDNhanVien", "HoTen", bangtukhai.IDNhanVien);
@@ -88,7 +88,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.Entry(bangtukhai).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DSTK");
             }
             ViewBag.IDNhanVien = new SelectList(db.NhanViens, "IDNhanVien", "HoTen", bangtukhai.IDNhanVien);
             return View(bangtukhai);
@@ -117,7 +117,7 @@ namespace DoAnQLNS.Controllers
             BangTuKhai bangtukhai = db.BangTuKhais.Find(id);
             db.BangTuKhais.Remove(bangtukhai);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("DSTK");
         }
 
         protected override void Dispose(bool disposing)
