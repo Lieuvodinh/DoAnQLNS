@@ -238,9 +238,28 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\boy1.jpg" />
+    <Content Include="Images\boy2.jpg" />
+    <Content Include="Images\boy3.jpg" />
+    <Content Include="Images\boy4.jpg" />
+    <Content Include="Images\boy5.jpg" />
+    <Content Include="Images\boy6.jpg" />
+    <Content Include="Images\boy7.jpg" />
+    <Content Include="Images\boy8.jpg" />
+    <Content Include="Images\girl1.jpg" />
+    <Content Include="Images\girl10.jpg" />
+    <Content Include="Images\girl11.jpg" />
+    <Content Include="Images\girl2.jpg" />
+    <Content Include="Images\girl3.jpg" />
+    <Content Include="Images\girl4.jpg" />
+    <Content Include="Images\girl5.jpg" />
+    <Content Include="Images\girl6.jpg" />
+    <Content Include="Images\girl7.jpg" />
+    <Content Include="Images\girl8.jpg" />
+    <Content Include="Images\girl9.jpg" />
+    <Content Include="Images\User.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\QLNS.edmx">
@@ -307,9 +326,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
