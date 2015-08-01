@@ -1,0 +1,15 @@
+
+.mylabel {
+    margin:15px;
+    text-align:right;
+}
+
+.mybuttonBack {
+    margin-left:-12px;
+    padding-left:0px;
+}
+
+.mybuttonSubmit {
+    margin-left:-10px;
+    padding-left:0px;
+}
