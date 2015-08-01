@@ -167,6 +167,7 @@
     <Compile Include="Controllers\HopDongLaoDongController.cs" />
     <Compile Include="Controllers\LoaiHopDongController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
+    <Compile Include="Controllers\PhongBanController.cs" />
     <Compile Include="Controllers\TuKhaiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -602,6 +603,10 @@
     <Content Include="Views\LoaiHopDong\Delete.cshtml" />
     <Content Include="Views\LoaiHopDong\Edit.cshtml" />
     <Content Include="Views\LoaiHopDong\DSLHD.cshtml" />
+    <Content Include="Views\PhongBan\Create.cshtml" />
+    <Content Include="Views\PhongBan\Delete.cshtml" />
+    <Content Include="Views\PhongBan\Edit.cshtml" />
+    <Content Include="Views\PhongBan\DSPB.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

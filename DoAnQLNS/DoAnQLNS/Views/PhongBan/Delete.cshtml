@@ -1,0 +1,46 @@
+﻿@model DoAnQLNS.Models.PhongBan
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="mywarningMessage"><h2>Bạn có chắc chắn là bạn sẽ xóa phòng ban này khỏi cơ sở dữ liệu không? Sau khi xóa thì sẽ không phục hồi lại được!!</h2></div>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenPhongBan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenPhongBan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <button class="btn btn-default">@Html.ActionLink("Trở về trang danh sách phòng ban", "DSPB")</button>
+        </div>
+    }
+</div>
