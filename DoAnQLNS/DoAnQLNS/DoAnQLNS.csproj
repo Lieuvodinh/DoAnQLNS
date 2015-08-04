@@ -185,6 +185,9 @@
     <Compile Include="Models\ChucVu.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DangNhap.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HoDongLaoDong.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>

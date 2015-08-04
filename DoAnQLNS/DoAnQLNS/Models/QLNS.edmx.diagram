@@ -36,6 +36,8 @@
         <AssociationConnector Association="QLNSDataModel.FK_NhanVien_TrinhDo_NhanVien" ManuallyRouted="false" />
         <AssociationConnector Association="QLNSDataModel.FK_NhanVien_PhongBan_PhongBan" ManuallyRouted="false" />
         <AssociationConnector Association="QLNSDataModel.FK_NhanVien_TrinhDo_TrinhDoHocVan" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QLNSDataModel.DangNhap" Width="1.5" PointX="3" PointY="19.375" />
+        <AssociationConnector Association="QLNSDataModel.FK__DangNhap__IDNhan__4222D4EF" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

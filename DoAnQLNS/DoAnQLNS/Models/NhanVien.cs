@@ -20,6 +20,7 @@ namespace DoAnQLNS.Models
             this.HoDongLaoDongs = new HashSet<HoDongLaoDong>();
             this.NhanVien_KyNang = new HashSet<NhanVien_KyNang>();
             this.NhanVien_TrinhDo = new HashSet<NhanVien_TrinhDo>();
+            this.DangNhaps = new HashSet<DangNhap>();
         }
     
         public string IDNhanVien { get; set; }
@@ -36,5 +37,6 @@ namespace DoAnQLNS.Models
         public virtual ICollection<HoDongLaoDong> HoDongLaoDongs { get; set; }
         public virtual ICollection<NhanVien_KyNang> NhanVien_KyNang { get; set; }
         public virtual ICollection<NhanVien_TrinhDo> NhanVien_TrinhDo { get; set; }
+        public virtual ICollection<DangNhap> DangNhaps { get; set; }
     }
 }

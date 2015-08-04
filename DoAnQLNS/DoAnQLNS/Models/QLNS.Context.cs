@@ -41,5 +41,6 @@ namespace DoAnQLNS.Models
         public virtual DbSet<NhanVien_TrinhDo> NhanVien_TrinhDo { get; set; }
         public virtual DbSet<PhongBan> PhongBans { get; set; }
         public virtual DbSet<TrinhDoHocVan> TrinhDoHocVans { get; set; }
+        public virtual DbSet<DangNhap> DangNhaps { get; set; }
     }
 }
