@@ -163,6 +163,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChiTietKhenThuongController.cs" />
     <Compile Include="Controllers\ChucVuController.cs" />
+    <Compile Include="Controllers\DangNhapController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HopDongLaoDongController.cs" />
     <Compile Include="Controllers\LoaiHopDongController.cs" />
@@ -610,6 +611,11 @@
     <Content Include="Views\PhongBan\Delete.cshtml" />
     <Content Include="Views\PhongBan\Edit.cshtml" />
     <Content Include="Views\PhongBan\DSPB.cshtml" />
+    <Content Include="Views\DangNhap\Create.cshtml" />
+    <Content Include="Views\DangNhap\Delete.cshtml" />
+    <Content Include="Views\DangNhap\Details.cshtml" />
+    <Content Include="Views\DangNhap\Edit.cshtml" />
+    <Content Include="Views\DangNhap\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
