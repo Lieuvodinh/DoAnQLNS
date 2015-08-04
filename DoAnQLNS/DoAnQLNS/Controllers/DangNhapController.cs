@@ -7,6 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DoAnQLNS.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Threading.Tasks;
+using Microsoft.Owin.Security;
+using System.Security.Claims;
 
 namespace DoAnQLNS.Controllers
 {
@@ -14,8 +19,43 @@ namespace DoAnQLNS.Controllers
     {
         private QLNSDataEntities db = new QLNSDataEntities();
 
+        
+        // GET: /DangNhap/DangNhap
+        [AllowAnonymous]
+        public ActionResult DangNhap()
+        {
+            DangNhap lg = new DangNhap();
+            return View("DangNhap", lg);//goi den trang Login va truyen cho cai model lg of Login
+        }
+
+        // POST: /DangNhap/DangNhap
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult DangNhap(DangNhap lg)
+        {
+            if (ModelState.IsValid)
+            {
+                var data = (from d in db.DangNhaps 
+                            where d.TenDangNhap.Equals(lg.TenDangNhap) && d.MatKhau.Equals(lg.MatKhau)
+                            select d).ToList();//lay du lieu voi dk tk va mk 
+                if (data.Count > 0)
+                {
+                    //neu tai khoan ton tai ta gan cho session
+                    Session["TenDangNhap"] = lg.TenDangNhap;
+                    Session["Quyen"] = lg.Quyen;
+                    //goi den ham GetRolesForUser o customroleprovider
+                    System.Web.Security.FormsAuthentication.SetAuthCookie(lg.TenDangNhap, false);
+                    return RedirectToAction("Index", "Home");
+                }
+                ViewBag.mess = "Sai Tai Khoan Hoac Mat Khau";
+                return View("DangNhap", lg);
+            }
+            return View("DangNhap", lg);//neu khong dung cu phap thi quay lai form dang nhap bao loi
+        }
+
         // GET: /DangNhap/
-        public ActionResult Index()
+        public ActionResult DSDN()
         {
             var dangnhaps = db.DangNhaps.Include(d => d.NhanVien);
             return View(dangnhaps.ToList());
@@ -54,7 +94,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.DangNhaps.Add(dangnhap);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DSDN");
             }
 
             ViewBag.IDNhanVien = new SelectList(db.NhanViens, "IDNhanVien", "HoTen", dangnhap.IDNhanVien);
@@ -88,7 +128,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.Entry(dangnhap).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DSDN");
             }
             ViewBag.IDNhanVien = new SelectList(db.NhanViens, "IDNhanVien", "HoTen", dangnhap.IDNhanVien);
             return View(dangnhap);
@@ -117,7 +157,7 @@ namespace DoAnQLNS.Controllers
             DangNhap dangnhap = db.DangNhaps.Find(id);
             db.DangNhaps.Remove(dangnhap);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("DSDN");
         }
 
         protected override void Dispose(bool disposing)

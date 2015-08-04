@@ -613,9 +613,9 @@
     <Content Include="Views\PhongBan\DSPB.cshtml" />
     <Content Include="Views\DangNhap\Create.cshtml" />
     <Content Include="Views\DangNhap\Delete.cshtml" />
-    <Content Include="Views\DangNhap\Details.cshtml" />
+    <Content Include="Views\DangNhap\DangNhap.cshtml" />
     <Content Include="Views\DangNhap\Edit.cshtml" />
-    <Content Include="Views\DangNhap\Index.cshtml" />
+    <Content Include="Views\DangNhap\DSDN.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
