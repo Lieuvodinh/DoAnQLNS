@@ -39,11 +39,14 @@ namespace DoAnQLNS.Controllers
                 var data = (from d in db.DangNhaps 
                             where d.TenDangNhap.Equals(lg.TenDangNhap) && d.MatKhau.Equals(lg.MatKhau)
                             select d).ToList();//lay du lieu voi dk tk va mk 
+                
                 if (data.Count > 0)
                 {
+                    
                     //neu tai khoan ton tai ta gan cho session
-                    Session["TenDangNhap"] = lg.TenDangNhap;
+                    Session["TenDangNhap"] = lg.NhanVien.HoTen;
                     Session["Quyen"] = lg.Quyen;
+                    Session["IDNhanVien"] = lg.IDNhanVien;
                     //goi den ham GetRolesForUser o customroleprovider
                     System.Web.Security.FormsAuthentication.SetAuthCookie(lg.TenDangNhap, false);
                     return RedirectToAction("Index", "Home");

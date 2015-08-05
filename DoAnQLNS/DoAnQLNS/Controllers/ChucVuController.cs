@@ -84,9 +84,10 @@ namespace DoAnQLNS.Controllers
             {
                 db.Entry(chucvu).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("DSCV");
+                return Json(new { success = true });
             }
-            return View(chucvu);
+
+            return View("Edit", chucvu);
         }
 
         // GET: /ChucVu/Delete/5

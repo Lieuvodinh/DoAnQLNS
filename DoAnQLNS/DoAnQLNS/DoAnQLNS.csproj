@@ -167,6 +167,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HopDongLaoDongController.cs" />
     <Compile Include="Controllers\LoaiHopDongController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
     <Compile Include="Controllers\PhongBanController.cs" />
     <Compile Include="Controllers\TuKhaiController.cs" />
@@ -455,6 +456,7 @@
     <Content Include="assets\js\mousemove.k.html" />
     <Content Include="assets\js\mouseup.k mousemove.k keyup.k.html" />
     <Content Include="assets\js\mouseup.k.html" />
+    <Content Include="assets\js\phones.js" />
     <Content Include="assets\js\Please enter a valid time in 12-hour am\pm format.html" />
     <Content Include="assets\js\prettify.js" />
     <Content Include="assets\js\propertychange.autosize.html" />
@@ -498,12 +500,8 @@
     <Content Include="assets\js\x-editable\save.internal.html" />
     <Content Include="assets\js\x-editable\tfoot th.clear.html" />
     <Content Include="assets\js\x-editable\tfoot th.today.html" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\mycss.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Images\boy1.jpg" />
     <Content Include="Images\boy2.jpg" />
     <Content Include="Images\boy3.jpg" />
@@ -524,8 +522,6 @@
     <Content Include="Images\girl8.jpg" />
     <Content Include="Images\girl9.jpg" />
     <Content Include="Images\User.jpg" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\QLNS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLNS.Designer.cs</LastGenOutput>
@@ -543,23 +539,6 @@
       <DependentUpon>QLNS.edmx</DependentUpon>
       <LastGenOutput>QLNS.cs</LastGenOutput>
     </Content>
-    <Content Include="assets\font\fontawesome-webfont.woff" />
-    <Content Include="assets\font\fontawesome-webfont_2d2816fe.eot" />
-    <Content Include="assets\font\fontawesome-webfont_aea8981c.eot" />
-    <Content Include="assets\font\fontawesome-webfont_aea8981c.ttf" />
-    <Content Include="assets\font\fontawesome-webfont_aea8981c.woff" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -571,7 +550,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
@@ -616,12 +594,18 @@
     <Content Include="Views\DangNhap\DangNhap.cshtml" />
     <Content Include="Views\DangNhap\Edit.cshtml" />
     <Content Include="Views\DangNhap\DSDN.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="assets\font\fontawesome-webfont.woff" />
+    <Content Include="assets\font\fontawesome-webfont_2d2816fe.eot" />
+    <Content Include="assets\font\fontawesome-webfont_aea8981c.eot" />
+    <Content Include="assets\font\fontawesome-webfont_aea8981c.ttf" />
+    <Content Include="assets\font\fontawesome-webfont_aea8981c.woff" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>

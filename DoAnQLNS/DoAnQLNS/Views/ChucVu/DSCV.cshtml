@@ -5,55 +5,72 @@
 }
 
 <div class="row-fluid">
-    <div class="span12">
-        <p>
-            @Html.ActionLink("Thêm mới", "Create")
-        </p>
-        <table id="sample-table-1" class="table table-striped table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>ID Chức Vụ</th>
-                    <th>Tên Chức Vụ</th>
-                    <th>Mô Tả</th>
-                    <th>Phụ Cấp</th>
-                    
-                    <th>Thao tác</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @item.IDChucVu
-                        </td>
-                        <td>
-                            @item.TenChucVu
-                        </td>
-                        <td>
-                            @item.MoTa
-                        </td>
-                        <td>
-                            @item.PhuCap
-                        </td>
-                        
-                        <td>
-                            <div class="hidden-phone visible-desktop btn-group">
-                                <button class="btn btn-mini btn-info">
-                                    <i class="icon-edit bigger-120">@Html.ActionLink("Sửa", "Edit", new { id = item.IDChucVu })</i>
-                                </button>
-                                <button class="btn btn-mini btn-danger">
-                                    <i class="icon-trash bigger-120">@Html.ActionLink("Xóa", "Delete", new { id = item.IDChucVu })</i>
-                                </button>
+    @using (Html.BeginForm("ChucVu", null, FormMethod.Get))
+    {
 
-                            </div>
-                            @*@Html.ActionLink("Edit", "Edit", new { id = item.IDNhanVien }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.IDNhanVien }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.IDNhanVien })*@
-                        </td>
+
+        <div class="span12">
+            <div class="row-fluid">
+                <a class="btn btn-primary" style="margin-bottom:5px" data-modal="" href="/ChucVu/Create" id="btnCreate">Tạo mới</a>
+            </div>
+
+            @*<p>
+                @Html.ActionLink("Thêm mới", "Create")
+            </p>*@
+            <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>ID Chức Vụ</th>
+                        <th>Tên Chức Vụ</th>
+                        <th>Mô Tả</th>
+                        <th>Phụ Cấp</th>
+                        <th>Thao tác</th>
                     </tr>
-                }
-            </tbody>
-        </table>
-    </div><!--/span-->
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.IDChucVu
+                            </td>
+                            <td>
+                                @item.TenChucVu
+                            </td>
+                            <td>
+                                @item.MoTa
+                            </td>
+                            <td>
+                                @item.PhuCap
+                            </td>
+                            <td>
+                                <div class="hidden-phone visible-desktop action-buttons">
+                                    @Html.Raw("<a class='green'  data-modal='' href='/ChucVu/Edit/" + item.IDChucVu + "' id='" + item.IDChucVu + "' title='Sửa thông tin'><i class='icon-pencil bigger-130'></i> </a>")
+                                    @Html.Raw("<a class='red'  data-modal='' href='/ChucVu/Delete/" + item.IDChucVu + "' id='" + item.IDChucVu + "' title='Xóa thông tin'><i class='icon-trash bigger-130'></i> </a>")
+
+
+                                </div>
+
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div><!--/span-->
+    }
+</div>
+@section scripts{
+    @System.Web.Optimization.Scripts.Render("~/assets/js/phones.js")
+}
+
+<!-- modal placeholder-->
+<div id='myModal' class='modal fade'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'>
+
+            </div>
+        </div>
+    </div>
 </div>
