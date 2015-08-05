@@ -22,19 +22,19 @@ namespace DoAnQLNS.Controllers
         }
 
         // GET: /ChiTietKhenThuong/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ChiTietKhenThuong chitietkhenthuong = db.ChiTietKhenThuongs.Find(id);
-            if (chitietkhenthuong == null)
-            {
-                return HttpNotFound();
-            }
-            return View(chitietkhenthuong);
-        }
+        //public ActionResult Details(string id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    ChiTietKhenThuong chitietkhenthuong = db.ChiTietKhenThuongs.Find(id);
+        //    if (chitietkhenthuong == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(chitietkhenthuong);
+        //}
 
         // GET: /ChiTietKhenThuong/Create
         public ActionResult Create()
@@ -91,11 +91,11 @@ namespace DoAnQLNS.Controllers
             {
                 db.Entry(chitietkhenthuong).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("DSCTKT");
+                return Json(new { success = true });
             }
             ViewBag.IDHopDong = new SelectList(db.HoDongLaoDongs, "IDHopDong", "IDNhanVien", chitietkhenthuong.IDHopDong);
             ViewBag.IDKhenThuong = new SelectList(db.LoaiKhenThuongs, "IDKhenThuong", "TenKhenThuong", chitietkhenthuong.IDKhenThuong);
-            return View(chitietkhenthuong);
+            return View("Edit",chitietkhenthuong);
         }
 
         // GET: /ChiTietKhenThuong/Delete/5

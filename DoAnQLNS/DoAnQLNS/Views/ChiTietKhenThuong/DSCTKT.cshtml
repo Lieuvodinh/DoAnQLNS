@@ -1,11 +1,68 @@
 ﻿@model IEnumerable<DoAnQLNS.Models.ChiTietKhenThuong>
 
 @{
-    ViewBag.Title = "DSCTKT";
+    ViewBag.Title = "Chi tiết khen thưởng";
 }
 
 
 <div class="row-fluid">
+    @using (Html.BeginForm("ChiTietKhenThuong", null, FormMethod.Get))
+    {
+        <div class="span12">
+            <div class="row-fluid">
+                <a class="btn btn-primary" style="margin-bottom:5px" data-modal="" href="/ChiTietKhenThuong/Create" id="btnCreate">Tạo mới</a>
+            </div>
+            @*<p>
+                @Html.ActionLink("Tạo mới chi tiết khen thưởng", "Create")
+            </p>*@
+            <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Ngày Quyết Định</th>
+                        <th>Nội Dung</th>
+                        <th>Quyết Định Số</th>
+                        <th>Mã Nhân Viên</th>
+                        <th>Tên Khen Thưởng</th>
+                        <th>Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.NgayQuyetDinh
+                            </td>
+                            <td>
+                                @item.NoiDung
+                            </td>
+                            <td>
+                                @item.QuyetDinhSo
+                            </td>
+                            <td>
+                                @item.HoDongLaoDong.IDNhanVien
+                            </td>
+                            <td>
+                                @item.LoaiKhenThuong.TenKhenThuong
+                            </td>
+                            <td>
+                                <div class="hidden-phone visible-desktop action-buttons">
+                                    @Html.Raw("<a class='green'  data-modal='' href='/ChiTietKhenThuong/Edit/" + item.IDKhenThuong + "' id='" + item.IDKhenThuong + "' title='Sửa thông tin'><i class='icon-pencil bigger-130'></i> </a>")
+                                    @Html.Raw("<a class='red'  data-modal='' href='/ChiTietKhenThuong/Delete/" + item.IDKhenThuong + "' id='" + item.IDKhenThuong + "' title='Xóa thông tin'><i class='icon-trash bigger-130'></i> </a>")
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div><!--/span-->
+    }
+</div>
+@section scripts{
+    @System.Web.Optimization.Scripts.Render("~/assets/js/phones.js")
+}
+
+@*<div class="row-fluid">
     <div class="span12">
         <p>
             @Html.ActionLink("Tạo mới chi tiết khen thưởng", "Create")
@@ -58,5 +115,5 @@
                 }
             </tbody>
         </table>
-    </div><!--/span-->
-</div>
+    </div>
+</div>*@

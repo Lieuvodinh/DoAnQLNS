@@ -575,7 +575,6 @@
     <Content Include="Views\TuKhai\DSTK.cshtml" />
     <Content Include="Views\ChiTietKhenThuong\Create.cshtml" />
     <Content Include="Views\ChiTietKhenThuong\Delete.cshtml" />
-    <Content Include="Views\ChiTietKhenThuong\Edit.cshtml" />
     <Content Include="Views\ChiTietKhenThuong\DSCTKT.cshtml" />
     <Content Include="Views\HopDongLaoDong\Create.cshtml" />
     <Content Include="Views\HopDongLaoDong\Delete.cshtml" />
@@ -607,6 +606,7 @@
     <Content Include="assets\font\fontawesome-webfont_aea8981c.ttf" />
     <Content Include="assets\font\fontawesome-webfont_aea8981c.woff" />
     <None Include="Project_Readme.html" />
+    <Content Include="Views\ChiTietKhenThuong\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

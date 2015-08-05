@@ -13,8 +13,7 @@
     <link href="~/assets//css/bootstrap-responsive.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/assets//css/font-awesome.min.css" />
 
-    <link href="~/Content//bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content//bootstrap.css" rel="stylesheet" />
+    
 
     <!--[if IE 7]>
       <link rel="stylesheet" href="~/assets//css/font-awesome-ie7.min.css" />
@@ -49,8 +48,8 @@
                 </a><!--/.brand-->
 
                 <ul class="nav ace-nav pull-right">
-                    <li class="grey">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    @*<li class="grey">
+                        @*<a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="icon-tasks"></i>
                             <span class="badge badge-grey">4</span>
                         </a>
@@ -120,9 +119,9 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>*@
 
-                    <li class="purple">
+                    @*<li class="purple">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="icon-bell-alt icon-animated-bell"></i>
                             <span class="badge badge-important">8</span>
@@ -184,9 +183,9 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>*@
 
-                    <li class="green">
+                    @*<li class="green">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="icon-envelope icon-animated-vertical"></i>
                             <span class="badge badge-success">5</span>
@@ -256,14 +255,14 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>*@
 
                     <li class="light-blue">
                         <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                            <img class="nav-user-photo" src="~/assets//avatars/user.jpg" alt="Jason's Photo" />
+                            <img class="nav-user-photo" src="~/Images//HinhAnh" alt="User's Photo" />
                             <span class="user-info">
                                 <small>Welcome,</small>
-                                Jason
+                                Session["TenDangNhap"]
                             </span>
 
                             <i class="icon-caret-down"></i>
@@ -300,21 +299,21 @@
         </a>
 
         <div class="sidebar" id="sidebar">
-            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+            @*<div class="sidebar-shortcuts" id="sidebar-shortcuts">
                 <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
                     
                 </div>
 
                 
-            </div><!--#sidebar-shortcuts-->
+            </div>*@<!--#sidebar-shortcuts-->
 
             <ul class="nav nav-list">
-                <li>
+                @*<li>
                     <a href="index.html">
                         <i class="icon-dashboard"></i>
                         <span class="menu-text"> Dashboard </span>
                     </a>
-                </li>
+                </li>*@
 
                 <li>
                     <a href="#" class="dropdown-toggle">
@@ -326,38 +325,111 @@
 
                     <ul class="submenu">
                         <li>
-                            <a href="#">
+                            
+                            <a href="#" class="dropdown-toggle">
                                 <i class="icon-double-angle-right"></i>
-                                Danh sách nhân viên
+                                Nhân viên
+                                <b class="arrow icon-angle-down"></b>
                             </a>
+                            <ul class="submenu">
+                                <li>
+                                    @Html.Raw("<a href='/NhanVien/DSNV/'><i class='icon-edit'></i>Nhân viên</a>")
+                                </li>
+                                <li>
+                                    @Html.Raw("<a href='#'><i class='icon-edit'></i>Tìm nhân viên</a>")
+                                </li>
+                                <li>
+                                    @Html.Raw("<a href='/NhanVien_ChucVu/DSNVCV/'><i class='icon-edit'></i>Nhân Viên - Chức vụ</a>")
+                                </li>
+
+                                <li>
+                                    @Html.Raw("<a href='/NhanVien_KyNang/DSNVKN/'><i class='icon-edit'></i>Nhân viên - Kỹ năng</a>")
+                                </li>
+
+                                <li>
+                                    @Html.Raw("<a href='/NhanVien_PhongBan/DSNVPB/'><i class='icon-edit'></i>Nhân viên - Phòng ban</a>")
+                                </li>
+
+                                <li>
+                                    @Html.Raw("<a href='/NhanVien_TrinhDo/DSNVTD/'><i class='icon-edit'></i>Nhân viên - Trình độ</a>")
+                                </li>
+                            </ul>
+                        </li>
+                        
+
+                        <li>
+                            @Html.Raw("<a href='/ChucVu/DSCV/'><i class='icon-edit'></i>Chức vụ</a>")
+                            
                         </li>
 
                         <li>
-                            @Html.Raw("<a href='/ChucVu/DSCV/'><i class='icon-double-angle-right'></i>Chức vụ</a>")
-                            @*<a href="#">
+                            <a href="#" class="dropdown-toggle">
                                 <i class="icon-double-angle-right"></i>
-                                Danh sách chức vụ
-                            </a>*@
+                                Kỷ luật
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    @Html.Raw("<a href='/LoaiKyLuat/DSLKL/'><i class='icon-edit'></i>Loại kỷ luật</a>")
+                                </li>
+                                <li>
+                                    @Html.Raw("<a href='/ChiTietKyLuat/DSCTKL/'><i class='icon-edit'></i>Danh sách kỷ luật</a>")
+                                </li>
+                            </ul>
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a href="#" class="dropdown-toggle">
                                 <i class="icon-double-angle-right"></i>
-                                Danh sách kỷ luật
+                                Khen thưởng
+                                <b class="arrow icon-angle-down"></b>
                             </a>
+                            <ul class="submenu">
+                                <li>
+                                    @Html.Raw("<a href='/LoaiKhenThuong/DSLKT/'><i class='icon-edit'></i>Loại khen thưởng</a>")
+                                </li>
+                                <li>
+                                    @Html.Raw("<a href='/ChiTietKhenThuong/DSCTKT/'><i class='icon-edit'></i>Danh sách khen thưởng</a>")
+                                </li>
+                            </ul>
                         </li>
+
                         <li>
-                            <a href="#">
+                            <a href="#" class="dropdown-toggle">
                                 <i class="icon-double-angle-right"></i>
-                                Danh sách khen thưởng
+                                Hợp đồng lao động
+                                <b class="arrow icon-angle-down"></b>
                             </a>
+                            <ul class="submenu">
+                                <li>
+                                    @Html.Raw("<a href='/LoaiHopDong/DSLHD/'><i class='icon-edit'></i>Loại hợp đồng lao động</a>")
+                                </li>
+                                <li>
+                                    @Html.Raw("<a href='/HoDongLaoDong/DSHDLD/'><i class='icon-edit'></i>Hợp đồng lao động</a>")
+                                </li>
+                            </ul>
                         </li>
+
                         <li>
-                            <a href="#">
-                                <i class="icon-double-angle-right"></i>
-                                Danh sách phòng ban
-                            </a>
+                            @Html.Raw("<a href='/KyNang/DSKN/'><i class='icon-edit'></i>Kỹ năng</a>")
                         </li>
+
+                        <li>
+                            @Html.Raw("<a href='/DangNhap/DSDN/'><i class='icon-edit'></i>Danh sách đăng nhập</a>")
+                        </li>
+
+                        <li>
+                            @Html.Raw("<a href='/PhongBan/DSPB/'><i class='icon-edit'></i>Danh sách phòng ban</a>")
+                        </li>
+
+                        <li>
+                            @Html.Raw("<a href='/TrinhDo/DSTD/'><i class='icon-edit'></i>Danh sách trình độ</a>")
+                        </li>
+
+                        <li>
+                            @Html.Raw("<a href='/TuKhai/DSTK/'><i class='icon-edit'></i>Tự khai</a>")
+                        </li>
+
                     </ul>
                 </li>
                 <li>
@@ -415,7 +487,7 @@
                 <ul class="breadcrumb">
                     <li>
                         <i class="icon-home home-icon"></i>
-                        <a href="#">Home</a>
+                        <a href="/Home/Index">Home</a>
 
                         <span class="divider">
                             <i class="icon-angle-right arrow-icon"></i>

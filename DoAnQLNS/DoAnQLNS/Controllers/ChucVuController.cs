@@ -21,19 +21,19 @@ namespace DoAnQLNS.Controllers
         }
 
         // GET: /ChucVu/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ChucVu chucvu = db.ChucVus.Find(id);
-            if (chucvu == null)
-            {
-                return HttpNotFound();
-            }
-            return View(chucvu);
-        }
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    ChucVu chucvu = db.ChucVus.Find(id);
+        //    if (chucvu == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(chucvu);
+        //}
 
         // GET: /ChucVu/Create
         public ActionResult Create()
