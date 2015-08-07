@@ -1,87 +1,29 @@
 ﻿@model DoAnQLNS.Models.NhanVien
-
 @{
-    ViewBag.Title = "Delete";
+    Layout = null;
 }
 
-<div class="mywarningMessage"><h2>Bạn có chắc chắn là bạn sẽ xóa nhân viên này khỏi cơ sở dữ liệu không? Sau khi xóa thì sẽ không phục hồi lại được!!</h2></div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <h4 class="header red lighter bigger">
+                <i class="icon-trash bigger-200"></i>
+                Bạn có muốn xóa?
+            </h4>
 
-<div>
-    <h4>NhanVien</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.HoTen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HoTen)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CMND)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CMND)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GioiTinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GioiTinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NgaySinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NgaySinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NoiSinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NoiSinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.QueQuan)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.QueQuan)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DiaChi)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DiaChi)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HinhAnh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HinhAnh)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Xóa" class="btn btn-default" /> |
-            <button class="btn btn-default">@Html.ActionLink("Trở về trang danh sách nhân viên", "DSNV")</button> 
+            <div class="space-6"></div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.HoTen, new { @class = "alert alert-error", @disabled = "disabled" })
+            </div>
         </div>
-    }
-</div>
+
+    </div>            <!-- /modal-body -->
+    <div class="modal-footer">
+        <input class="btn btn-danger" type="submit" value="Có">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true"> Đóng</button>
+    </div>
+}
+
+

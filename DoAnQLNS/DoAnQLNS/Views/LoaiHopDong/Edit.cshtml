@@ -1,37 +1,37 @@
 ﻿@model DoAnQLNS.Models.LoaiHopDong
-
 @{
-    ViewBag.Title = "Edit";
+    Layout = null;
 }
-
-<h2>CHỈNH SỬA LOẠI HỢP ĐỒNG</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <h4 class="header green lighter bigger">
+                <i class="icon-edit bigger-150"></i>
+                Sửa loại hợp đồng
+            </h4>
 
-    <div class="form-horizontal">
+            <div class="space-6"></div>
 
-        <hr />
-        @Html.ValidationSummary(true)
-        @Html.HiddenFor(model => model.IDLoaiHopDong)
+            @Html.HiddenFor(model => model.IDLoaiHopDong)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.TenLoai, "Tên Loại Hợp Đồng", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TenLoai)
-                @Html.ValidationMessageFor(model => model.TenLoai)
+            <div class="form-group">
+                <label class="text-info">Tên loại hợp đồng: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.TenLoai, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.TenLoai)
+                    </div>
+                </div>
             </div>
         </div>
+    </div>            <!-- /modal-body -->
+    <div class="modal-footer">
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Lưu thay đổi" class="btn btn-default mybuttonSubmit" />
-            </div>
-        </div>
+        <button type="submit" class="btn btn-success"> Lưu</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true"> Đóng</button>
     </div>
 }
 
-<div class="col-md-offset-2 col-md-10">
-    <button class="mybuttonBack">@Html.ActionLink("Trở về lại trang danh sách loại hợp đồng", "DSLHD")</button>
-</div>

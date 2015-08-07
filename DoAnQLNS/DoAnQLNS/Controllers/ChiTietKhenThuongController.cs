@@ -55,7 +55,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.ChiTietKhenThuongs.Add(chitietkhenthuong);
                 db.SaveChanges();
-                return RedirectToAction("DSCTKT");
+                return Json(new { success = true });
             }
 
             ViewBag.IDHopDong = new SelectList(db.HoDongLaoDongs, "IDHopDong", "IDNhanVien", chitietkhenthuong.IDHopDong);
@@ -121,7 +121,7 @@ namespace DoAnQLNS.Controllers
             ChiTietKhenThuong chitietkhenthuong = db.ChiTietKhenThuongs.Find(id);
             db.ChiTietKhenThuongs.Remove(chitietkhenthuong);
             db.SaveChanges();
-            return RedirectToAction("DSCTKT");
+            return Json(new { success = true });
         }
 
         protected override void Dispose(bool disposing)

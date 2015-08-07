@@ -21,19 +21,19 @@ namespace DoAnQLNS.Controllers
         }
 
         // GET: /PhongBan/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PhongBan phongban = db.PhongBans.Find(id);
-            if (phongban == null)
-            {
-                return HttpNotFound();
-            }
-            return View(phongban);
-        }
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    PhongBan phongban = db.PhongBans.Find(id);
+        //    if (phongban == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(phongban);
+        //}
 
         // GET: /PhongBan/Create
         public ActionResult Create()
@@ -52,7 +52,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.PhongBans.Add(phongban);
                 db.SaveChanges();
-                return RedirectToAction("DSPB");
+                return Json(new { success = true });
             }
 
             return View(phongban);
@@ -78,13 +78,13 @@ namespace DoAnQLNS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="IDPhongBan,TenPhongBan,SDT,Email")] PhongBan phongban)
+        public ActionResult Edit([Bind(Include = "IDPhongBan,TenPhongBan,SDT,Email")] PhongBan phongban)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(phongban).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("DSPB");
+                return Json(new { success = true });
             }
             return View(phongban);
         }
@@ -112,7 +112,7 @@ namespace DoAnQLNS.Controllers
             PhongBan phongban = db.PhongBans.Find(id);
             db.PhongBans.Remove(phongban);
             db.SaveChanges();
-            return RedirectToAction("DSPB");
+            return Json(new { success = true });
         }
 
         protected override void Dispose(bool disposing)

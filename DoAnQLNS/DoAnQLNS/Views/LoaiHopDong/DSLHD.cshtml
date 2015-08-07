@@ -1,50 +1,59 @@
 ﻿@model IEnumerable<DoAnQLNS.Models.LoaiHopDong>
-
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "DANH SÁCH LOẠI HỢP ĐỒNG";
 }
 
-
-
 <div class="row-fluid">
-    <div class="span12">
-        <p>
-            @Html.ActionLink("Thêm mới", "Create")
-        </p>
-        <table id="sample-table-1" class="table table-striped table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>Mã Loại Hợp Đồng</th>
-                    <th>Tên Loại Hợp Đồng</th>
-                    <th>Thao Tác</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+    @using (Html.BeginForm("LoaiHopDong", null, FormMethod.Get))
+    {
+        <div class="span12">
+            <div class="row-fluid">
+                <a class="btn btn-primary" style="margin-bottom:5px" data-modal="" href="/LoaiHopDong/Create" id="btnCreate">Tạo mới</a>
+            </div>
+
+            <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+                <thead>
                     <tr>
-                        <td>
-                            @item.IDLoaiHopDong
-                        </td>
-                        <td>
-                            @item.TenLoai
-                        </td>
-                        
-                        <td>
-                            <div class="hidden-phone visible-desktop btn-group">
-                                <button class="btn btn-mini btn-info">
-                                    <i class="icon-edit bigger-120">@Html.ActionLink("Sửa", "Edit", new { id = item.IDLoaiHopDong })</i>
-                                </button>
-                                <button class="btn btn-mini btn-danger">
-                                    <i class="icon-trash bigger-120">@Html.ActionLink("Xóa", "Delete", new { id = item.IDLoaiHopDong})</i>
-                                </button>
-
-                            </div>
-
-                        </td>
+                        <th>Mã loại hợp đồng</th>
+                        <th>Tên loại hợp đồng</th>
+                        <th>Thao Tác</th>
                     </tr>
-                }
-            </tbody>
-        </table>
-    </div><!--/span-->
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.IDLoaiHopDong
+                            </td>
+                            <td>
+                                @item.TenLoai
+                            </td>
+                            <td>
+                                <div class="hidden-phone visible-desktop action-buttons">
+                                    @Html.Raw("<a class='green'  data-modal='' href='/LoaiHopDong/Edit/" + item.IDLoaiHopDong + "' id='" + item.IDLoaiHopDong + "' title='Sửa thông tin'><i class='icon-pencil bigger-130'></i> </a>")
+                                    @Html.Raw("<a class='red'  data-modal='' href='/LoaiHopDong/Delete/" + item.IDLoaiHopDong + "' id='" + item.IDLoaiHopDong + "' title='Xóa thông tin'><i class='icon-trash bigger-130'></i> </a>")
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
 </div>
+@section scripts{
+    @System.Web.Optimization.Scripts.Render("~/assets/js/phones.js")
+}
+
+<!-- modal placeholder-->
+<div id='myModal' class='modal fade'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'>
+
+            </div>
+        </div>
+    </div>
+</div>
+

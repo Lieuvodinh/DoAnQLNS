@@ -1,52 +1,59 @@
 ﻿@model DoAnQLNS.Models.PhongBan
-
 @{
-    ViewBag.Title = "Create";
+    Layout = null;
 }
 
-<h2>THÊM MỚI PHÒNG BAN</h2>
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        
-        <hr />
-        @Html.ValidationSummary(true)
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <h4 class="header green lighter bigger">
+                <i class="icon-edit bigger-150"></i>
+                Thêm mới phòng ban
+            </h4>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.TenPhongBan, "Tên Phòng Ban", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TenPhongBan)
-                @Html.ValidationMessageFor(model => model.TenPhongBan)
+            <div class="space-6"></div>
+
+            <div class="form-group">
+                <label class="text-info">Tên phòng ban: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.TenPhongBan, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.TenPhongBan)
+                    </div>
+                </div>
             </div>
+
+            <div class="form-group">
+                <label class="text-info">Số điện thoại: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.SDT, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.SDT)
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="text-info">Email: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.Email)
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.SDT, "Số Điện Thoại", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SDT)
-                @Html.ValidationMessageFor(model => model.SDT)
-            </div>
-        </div>
+    </div>            <!-- /modal-body -->
+    <div class="modal-footer">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, "Địa Chỉ email", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email)
-                @Html.ValidationMessageFor(model => model.Email)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Tạo mới" class="btn btn-default mybuttonSubmit" />
-            </div>
-        </div>
+        <button type="submit" class="btn btn-success"> Lưu</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true"> Đóng</button>
     </div>
 }
 
-<div class="col-md-offset-2 col-md-10">
-    <button class="mybuttonBack">@Html.ActionLink("Trở về lại trang danh sách phòng ban", "DSPB")</button>
-</div>
+
+

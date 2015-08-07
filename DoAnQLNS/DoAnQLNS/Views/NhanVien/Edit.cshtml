@@ -1,98 +1,115 @@
 ﻿@model DoAnQLNS.Models.NhanVien
-
 @{
-    ViewBag.Title = "Edit";
+    Layout = null;
 }
-
-<h2>SỬA THÔNG TIN NHÂN VIÊN</h2>
-
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        
-        <hr />
-        @Html.ValidationSummary(true)
-        @Html.HiddenFor(model => model.IDNhanVien)
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <h4 class="header green lighter bigger">
+                <i class="icon-edit bigger-150"></i>
+                Sửa thông tin nhân viên
+            </h4>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.HoTen, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.HoTen)
-                @Html.ValidationMessageFor(model => model.HoTen)
+            <div class="space-6"></div>
+
+            <div class="form-group">
+                <label class="text-info">Mã nhân viên: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.IDNhanVien, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.IDNhanVien)
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="text-info">Tên nhân viên: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.HoTen, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.HoTen)
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="text-info">Số chứng minh nhân dân: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.CMND, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.CMND)
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="text-info">Giới tính: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.GioiTinh, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.GioiTinh)
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="text-info">Ngày sinh: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.NgaySinh, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.NgaySinh)
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="text-info">Nơi sinh: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.NoiSinh, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.NoiSinh)
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="text-info">Quê quán: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.QueQuan, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.QueQuan)
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="text-info">Địa chỉ: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.DiaChi, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.DiaChi)
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="text-info">Hình ảnh: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.HinhAnh, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.HinhAnh)
+                    </div>
+                </div>
             </div>
         </div>
+    </div>            <!-- /modal-body -->
+    <div class="modal-footer">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CMND, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CMND)
-                @Html.ValidationMessageFor(model => model.CMND)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.GioiTinh, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.GioiTinh)
-                @Html.ValidationMessageFor(model => model.GioiTinh)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.NgaySinh, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NgaySinh)
-                @Html.ValidationMessageFor(model => model.NgaySinh)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.NoiSinh, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NoiSinh)
-                @Html.ValidationMessageFor(model => model.NoiSinh)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.QueQuan, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.QueQuan)
-                @Html.ValidationMessageFor(model => model.QueQuan)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DiaChi, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DiaChi)
-                @Html.ValidationMessageFor(model => model.DiaChi)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.HinhAnh, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.HinhAnh)
-                @Html.ValidationMessageFor(model => model.HinhAnh)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Lưu chỉnh sửa" class="btn btn-default mybuttonSubmit" />
-            </div>
-        </div>
+        <button type="submit" class="btn btn-success"> Lưu</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true"> Đóng</button>
     </div>
 }
-
-<div>
-    <div class="col-md-offset-2 col-md-10">
-        <button class="mybuttonBack">@Html.ActionLink("Trở về lại trang danh sách nhân viên", "DSNV")</button>
-    </div>
-</div>
-
 

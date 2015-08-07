@@ -21,19 +21,19 @@ namespace DoAnQLNS.Controllers
         }
 
         // GET: /NhanVien/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            NhanVien nhanvien = db.NhanViens.Find(id);
-            if (nhanvien == null)
-            {
-                return HttpNotFound();
-            }
-            return View(nhanvien);
-        }
+        //public ActionResult Details(string id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    NhanVien nhanvien = db.NhanViens.Find(id);
+        //    if (nhanvien == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(nhanvien);
+        //}
 
         // GET: /NhanVien/Create
         public ActionResult Create()
@@ -52,7 +52,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.NhanViens.Add(nhanvien);
                 db.SaveChanges();
-                return RedirectToAction("DSNV");
+                return Json(new { success = true });
             }
 
             return View(nhanvien);
@@ -84,7 +84,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.Entry(nhanvien).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("DSNV");
+                return Json(new { success = true });
             }
             return View(nhanvien);
         }
@@ -112,7 +112,7 @@ namespace DoAnQLNS.Controllers
             NhanVien nhanvien = db.NhanViens.Find(id);
             db.NhanViens.Remove(nhanvien);
             db.SaveChanges();
-            return RedirectToAction("DSNV");
+            return Json(new { success = true });
         }
 
         protected override void Dispose(bool disposing)

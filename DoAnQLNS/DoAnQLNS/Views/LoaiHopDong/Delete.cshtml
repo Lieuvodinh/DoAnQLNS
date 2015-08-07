@@ -1,4 +1,4 @@
-﻿@model DoAnQLNS.Models.ChucVu
+﻿@model DoAnQLNS.Models.LoaiHopDong
 @{
     Layout = null;
 }
@@ -15,13 +15,13 @@
 
             <div class="space-6"></div>
             <div class="form-group">
-                @Html.TextBoxFor(m => m.TenChucVu, new { @class = "alert alert-error", @disabled = "disabled" })
+                @Html.TextBoxFor(m => m.TenLoai, new { @class = "alert alert-error", @disabled = "disabled" })
             </div>
         </div>
 
     </div>            <!-- /modal-body -->
     <div class="modal-footer">
-        <input class="btn btn-danger" type="submit" value="Yes">
+        <input class="btn btn-danger" type="submit" value="Có">
         <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true"> Đóng</button>
     </div>
 }

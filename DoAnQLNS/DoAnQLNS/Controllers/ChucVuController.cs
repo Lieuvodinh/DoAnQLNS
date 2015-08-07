@@ -52,7 +52,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.ChucVus.Add(chucvu);
                 db.SaveChanges();
-                return RedirectToAction("DSCV");
+                return Json(new { success = true });
             }
 
             return View(chucvu);
@@ -113,7 +113,7 @@ namespace DoAnQLNS.Controllers
             ChucVu chucvu = db.ChucVus.Find(id);
             db.ChucVus.Remove(chucvu);
             db.SaveChanges();
-            return RedirectToAction("DSCV");
+            return Json(new { success = true });
         }
 
         protected override void Dispose(bool disposing)

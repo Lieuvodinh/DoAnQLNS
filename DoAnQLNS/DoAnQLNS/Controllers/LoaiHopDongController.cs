@@ -52,7 +52,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.LoaiHopDongs.Add(loaihopdong);
                 db.SaveChanges();
-                return RedirectToAction("DSLHD");
+                return Json(new { success = true });
             }
 
             return View(loaihopdong);
@@ -84,7 +84,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.Entry(loaihopdong).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("DSLHD");
+                return Json(new { success = true });
             }
             return View(loaihopdong);
         }
@@ -112,7 +112,7 @@ namespace DoAnQLNS.Controllers
             LoaiHopDong loaihopdong = db.LoaiHopDongs.Find(id);
             db.LoaiHopDongs.Remove(loaihopdong);
             db.SaveChanges();
-            return RedirectToAction("DSLHD");
+            return Json(new { success = true });
         }
 
         protected override void Dispose(bool disposing)

@@ -65,19 +65,19 @@ namespace DoAnQLNS.Controllers
         }
 
         // GET: /DangNhap/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            DangNhap dangnhap = db.DangNhaps.Find(id);
-            if (dangnhap == null)
-            {
-                return HttpNotFound();
-            }
-            return View(dangnhap);
-        }
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    DangNhap dangnhap = db.DangNhaps.Find(id);
+        //    if (dangnhap == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(dangnhap);
+        //}
 
         // GET: /DangNhap/Create
         public ActionResult Create()
@@ -97,7 +97,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.DangNhaps.Add(dangnhap);
                 db.SaveChanges();
-                return RedirectToAction("DSDN");
+                return Json(new { success = true });
             }
 
             ViewBag.IDNhanVien = new SelectList(db.NhanViens, "IDNhanVien", "HoTen", dangnhap.IDNhanVien);
@@ -131,7 +131,7 @@ namespace DoAnQLNS.Controllers
             {
                 db.Entry(dangnhap).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("DSDN");
+                return Json(new { success = true });
             }
             ViewBag.IDNhanVien = new SelectList(db.NhanViens, "IDNhanVien", "HoTen", dangnhap.IDNhanVien);
             return View(dangnhap);
@@ -160,7 +160,7 @@ namespace DoAnQLNS.Controllers
             DangNhap dangnhap = db.DangNhaps.Find(id);
             db.DangNhaps.Remove(dangnhap);
             db.SaveChanges();
-            return RedirectToAction("DSDN");
+            return Json(new { success = true });
         }
 
         protected override void Dispose(bool disposing)
