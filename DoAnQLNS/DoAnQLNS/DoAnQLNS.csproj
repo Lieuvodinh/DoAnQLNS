@@ -169,7 +169,6 @@
     <Compile Include="Controllers\LoaiHopDongController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
-    <Compile Include="Controllers\NhanVien_KyNangController.cs" />
     <Compile Include="Controllers\PhongBanController.cs" />
     <Compile Include="Controllers\TuKhaiController.cs" />
     <Compile Include="Global.asax.cs">
@@ -597,7 +596,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\NVKyNang\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -609,10 +607,6 @@
     <None Include="Project_Readme.html" />
     <Content Include="Views\ChiTietKhenThuong\Edit.cshtml" />
     <Content Include="Views\LoaiHopDong\Delete.cshtml" />
-    <Content Include="Views\NhanVien_KyNang\Create.cshtml" />
-    <Content Include="Views\NhanVien_KyNang\Delete.cshtml" />
-    <Content Include="Views\NhanVien_KyNang\Edit.cshtml" />
-    <Content Include="Views\NhanVien_KyNang\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
