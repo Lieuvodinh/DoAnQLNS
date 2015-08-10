@@ -1,0 +1,48 @@
+﻿@model DoAnQLNS.Models.NhanVien_KyNang
+@{
+    Layout = null;
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <h4 class="header green lighter bigger">
+                <i class="icon-edit bigger-150"></i>
+                Thêm mới kỹ năng nhân viên
+            </h4>
+            <div class="space-6"></div>
+            <div class="form-group">
+                <label class="text-info">ID nhân viên: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.IDNhanVien, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.IDNhanVien)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">ID Kỹ Năng: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.IDKyNang, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.IDKyNang)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Năm kinh nghiệm: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.SoNamKinhNghiem, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.SoNamKinhNghiem)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>            <!-- /modal-body -->
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-success"> Lưu</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true"> Đóng</button>
+    </div>
+}
