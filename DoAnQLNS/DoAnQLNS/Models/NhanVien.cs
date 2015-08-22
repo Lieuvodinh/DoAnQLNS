@@ -14,13 +14,14 @@ namespace DoAnQLNS.Models
     
     public partial class NhanVien
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NhanVien()
         {
             this.BangTuKhais = new HashSet<BangTuKhai>();
+            this.DangNhaps = new HashSet<DangNhap>();
             this.HoDongLaoDongs = new HashSet<HoDongLaoDong>();
             this.NhanVien_KyNang = new HashSet<NhanVien_KyNang>();
             this.NhanVien_TrinhDo = new HashSet<NhanVien_TrinhDo>();
-            this.DangNhaps = new HashSet<DangNhap>();
         }
     
         public string IDNhanVien { get; set; }
@@ -33,10 +34,15 @@ namespace DoAnQLNS.Models
         public string DiaChi { get; set; }
         public string HinhAnh { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BangTuKhai> BangTuKhais { get; set; }
-        public virtual ICollection<HoDongLaoDong> HoDongLaoDongs { get; set; }
-        public virtual ICollection<NhanVien_KyNang> NhanVien_KyNang { get; set; }
-        public virtual ICollection<NhanVien_TrinhDo> NhanVien_TrinhDo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DangNhap> DangNhaps { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HoDongLaoDong> HoDongLaoDongs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NhanVien_KyNang> NhanVien_KyNang { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NhanVien_TrinhDo> NhanVien_TrinhDo { get; set; }
     }
 }

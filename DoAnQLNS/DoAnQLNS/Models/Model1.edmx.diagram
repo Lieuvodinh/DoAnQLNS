@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="155da8179a134fdd8581ba3a5a8a6d67" Name="Diagram1">
+        <EntityTypeShape EntityType="QLNSDataModelNewest.BangTuKhai" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.ChiTietKhenThuong" Width="1.5" PointX="8.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.ChiTietKiLuat" Width="1.5" PointX="11.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.ChucVu" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.DangNhap" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.HoDongLaoDong" Width="1.5" PointX="6" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.KyNang" Width="1.5" PointX="3.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.LoaiHopDong" Width="1.5" PointX="3.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.LoaiKhenThuong" Width="1.5" PointX="6" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.LoaiKiLuat" Width="1.5" PointX="9" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.NhanVien" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.NhanVien_ChucVu" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.NhanVien_KyNang" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.NhanVien_PhongBan" Width="1.5" PointX="8.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.NhanVien_TrinhDo" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.PhongBan" Width="1.5" PointX="6" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNSDataModelNewest.TrinhDoHocVan" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_BangTuKhai_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_ChiTietKhenThuong_HoDongLaoDong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_ChiTietKhenThuong_LoaiKhenThuong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_ChiTietKiLuat_HoDongLaoDong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_ChiTietKiLuat_LoaiKiLuat" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_NhanVien_ChucVu_ChucVu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK__DangNhap__IDNhan__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_HoDongLaoDong_LoaiHopDong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_HoDongLaoDong_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_NhanVien_ChucVu_HoDongLaoDong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_NhanVien_PhongBan_HoDongLaoDong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_NhanVien_KyNang_KyNang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_NhanVien_KyNang_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_NhanVien_TrinhDo_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_NhanVien_PhongBan_PhongBan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNSDataModelNewest.FK_NhanVien_TrinhDo_TrinhDoHocVan" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

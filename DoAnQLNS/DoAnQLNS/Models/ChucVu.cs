@@ -14,6 +14,7 @@ namespace DoAnQLNS.Models
     
     public partial class ChucVu
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ChucVu()
         {
             this.NhanVien_ChucVu = new HashSet<NhanVien_ChucVu>();
@@ -24,6 +25,7 @@ namespace DoAnQLNS.Models
         public string MoTa { get; set; }
         public Nullable<decimal> PhuCap { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NhanVien_ChucVu> NhanVien_ChucVu { get; set; }
     }
 }

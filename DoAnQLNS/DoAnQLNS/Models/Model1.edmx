@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QLNSDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QLNSDataModelNewest.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BangTuKhai">
           <Key>
             <PropertyRef Name="IDTuKhai" />
@@ -17,25 +17,25 @@
         </EntityType>
         <EntityType Name="ChiTietKhenThuong">
           <Key>
-            <PropertyRef Name="IDHopDong" />
-            <PropertyRef Name="IDKhenThuong" />
+            <PropertyRef Name="IDCTKT" />
           </Key>
           <Property Name="IDHopDong" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="IDKhenThuong" Type="int" Nullable="false" />
           <Property Name="NgayQuyetDinh" Type="date" />
           <Property Name="NoiDung" Type="ntext" />
           <Property Name="QuyetDinhSo" Type="nchar" MaxLength="10" />
+          <Property Name="IDCTKT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="ChiTietKiLuat">
           <Key>
-            <PropertyRef Name="IDHopDong" />
-            <PropertyRef Name="IDKiLuat" />
+            <PropertyRef Name="IDCTKL" />
           </Key>
           <Property Name="IDHopDong" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="IDKiLuat" Type="int" Nullable="false" />
           <Property Name="NgayQuyetDinh" Type="date" />
           <Property Name="NoiDung" Type="ntext" />
           <Property Name="QuyetDinhSo" Type="nchar" MaxLength="10" />
+          <Property Name="IDCTKL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="ChucVu">
           <Key>
@@ -117,8 +117,7 @@
         </EntityType>
         <EntityType Name="NhanVien_ChucVu">
           <Key>
-            <PropertyRef Name="IDHopDong" />
-            <PropertyRef Name="IDChucVu" />
+            <PropertyRef Name="IDNVCV" />
           </Key>
           <Property Name="IDHopDong" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="IDChucVu" Type="int" Nullable="false" />
@@ -126,20 +125,20 @@
           <Property Name="NgayKetThuc" Type="date" />
           <Property Name="QuyetDinhSo" Type="nvarchar" MaxLength="50" />
           <Property Name="TinhTrang" Type="bit" />
+          <Property Name="IDNVCV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="NhanVien_KyNang">
           <Key>
-            <PropertyRef Name="IDNhanVien" />
-            <PropertyRef Name="IDKyNang" />
+            <PropertyRef Name="IDNVKN" />
           </Key>
           <Property Name="IDNhanVien" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="IDKyNang" Type="int" Nullable="false" />
           <Property Name="SoNamKinhNghiem" Type="int" />
+          <Property Name="IDNVKN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="NhanVien_PhongBan">
           <Key>
-            <PropertyRef Name="IDHopDong" />
-            <PropertyRef Name="IDPhongBan" />
+            <PropertyRef Name="IDNVPB" />
           </Key>
           <Property Name="IDHopDong" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="IDPhongBan" Type="int" Nullable="false" />
@@ -147,11 +146,11 @@
           <Property Name="NgayKetThuc" Type="date" />
           <Property Name="QuyetDinhSo" Type="nvarchar" MaxLength="50" />
           <Property Name="TinhTrang" Type="bit" />
+          <Property Name="IDNVPB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="NhanVien_TrinhDo">
           <Key>
-            <PropertyRef Name="IDNhanVien" />
-            <PropertyRef Name="IDTrinhDo" />
+            <PropertyRef Name="IDNVTD" />
           </Key>
           <Property Name="IDNhanVien" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="IDTrinhDo" Type="int" Nullable="false" />
@@ -159,6 +158,7 @@
           <Property Name="NoiDaoTao" Type="nvarchar" MaxLength="200" />
           <Property Name="NgayBatDau" Type="date" />
           <Property Name="XepLoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDNVTD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="PhongBan">
           <Key>
@@ -176,7 +176,7 @@
           <Property Name="IDTrinhDo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenTrinhDo" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__DangNhap__IDNhan__4222D4EF">
+        <Association Name="FK__DangNhap__IDNhan__33D4B598">
           <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
           <End Role="DangNhap" Type="Self.DangNhap" Multiplicity="*" />
           <ReferentialConstraint>
@@ -368,7 +368,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLNSDataModelStoreContainer">
+        <EntityContainer Name="QLNSDataModelNewestStoreContainer">
           <EntitySet Name="BangTuKhai" EntityType="Self.BangTuKhai" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietKhenThuong" EntityType="Self.ChiTietKhenThuong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietKiLuat" EntityType="Self.ChiTietKiLuat" Schema="dbo" store:Type="Tables" />
@@ -386,7 +386,7 @@
           <EntitySet Name="NhanVien_TrinhDo" EntityType="Self.NhanVien_TrinhDo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhongBan" EntityType="Self.PhongBan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TrinhDoHocVan" EntityType="Self.TrinhDoHocVan" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__DangNhap__IDNhan__4222D4EF" Association="Self.FK__DangNhap__IDNhan__4222D4EF">
+          <AssociationSet Name="FK__DangNhap__IDNhan__33D4B598" Association="Self.FK__DangNhap__IDNhan__33D4B598">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="DangNhap" EntitySet="DangNhap" />
           </AssociationSet>
@@ -451,10 +451,11 @@
             <End Role="NhanVien_TrinhDo" EntitySet="NhanVien_TrinhDo" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="QLNSDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="QLNSDataModelNewest" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="BangTuKhai">
           <Key>
             <PropertyRef Name="IDTuKhai" />
@@ -468,27 +469,27 @@
         </EntityType>
         <EntityType Name="ChiTietKhenThuong">
           <Key>
-            <PropertyRef Name="IDHopDong" />
-            <PropertyRef Name="IDKhenThuong" />
+            <PropertyRef Name="IDCTKT" />
           </Key>
           <Property Name="IDHopDong" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IDKhenThuong" Type="Int32" Nullable="false" />
           <Property Name="NgayQuyetDinh" Type="DateTime" Precision="0" />
           <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="QuyetDinhSo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IDCTKT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="HoDongLaoDong" Relationship="Self.FK_ChiTietKhenThuong_HoDongLaoDong" FromRole="ChiTietKhenThuong" ToRole="HoDongLaoDong" />
           <NavigationProperty Name="LoaiKhenThuong" Relationship="Self.FK_ChiTietKhenThuong_LoaiKhenThuong" FromRole="ChiTietKhenThuong" ToRole="LoaiKhenThuong" />
         </EntityType>
         <EntityType Name="ChiTietKiLuat">
           <Key>
-            <PropertyRef Name="IDHopDong" />
-            <PropertyRef Name="IDKiLuat" />
+            <PropertyRef Name="IDCTKL" />
           </Key>
           <Property Name="IDHopDong" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IDKiLuat" Type="Int32" Nullable="false" />
           <Property Name="NgayQuyetDinh" Type="DateTime" Precision="0" />
           <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="QuyetDinhSo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IDCTKL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="HoDongLaoDong" Relationship="Self.FK_ChiTietKiLuat_HoDongLaoDong" FromRole="ChiTietKiLuat" ToRole="HoDongLaoDong" />
           <NavigationProperty Name="LoaiKiLuat" Relationship="Self.FK_ChiTietKiLuat_LoaiKiLuat" FromRole="ChiTietKiLuat" ToRole="LoaiKiLuat" />
         </EntityType>
@@ -501,6 +502,17 @@
           <Property Name="MoTa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PhuCap" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="NhanVien_ChucVu" Relationship="Self.FK_NhanVien_ChucVu_ChucVu" FromRole="ChucVu" ToRole="NhanVien_ChucVu" />
+        </EntityType>
+        <EntityType Name="DangNhap">
+          <Key>
+            <PropertyRef Name="IDDangNhap" />
+          </Key>
+          <Property Name="IDDangNhap" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDNhanVien" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenDangNhap" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Quyen" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK__DangNhap__IDNhan__33D4B598" FromRole="DangNhap" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="HoDongLaoDong">
           <Key>
@@ -571,15 +583,14 @@
           <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HinhAnh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="BangTuKhais" Relationship="Self.FK_BangTuKhai_NhanVien" FromRole="NhanVien" ToRole="BangTuKhai" />
+          <NavigationProperty Name="DangNhaps" Relationship="Self.FK__DangNhap__IDNhan__33D4B598" FromRole="NhanVien" ToRole="DangNhap" />
           <NavigationProperty Name="HoDongLaoDongs" Relationship="Self.FK_HoDongLaoDong_NhanVien" FromRole="NhanVien" ToRole="HoDongLaoDong" />
           <NavigationProperty Name="NhanVien_KyNang" Relationship="Self.FK_NhanVien_KyNang_NhanVien" FromRole="NhanVien" ToRole="NhanVien_KyNang" />
           <NavigationProperty Name="NhanVien_TrinhDo" Relationship="Self.FK_NhanVien_TrinhDo_NhanVien" FromRole="NhanVien" ToRole="NhanVien_TrinhDo" />
-          <NavigationProperty Name="DangNhaps" Relationship="QLNSDataModel.FK__DangNhap__IDNhan__4222D4EF" FromRole="NhanVien" ToRole="DangNhap" />
         </EntityType>
         <EntityType Name="NhanVien_ChucVu">
           <Key>
-            <PropertyRef Name="IDHopDong" />
-            <PropertyRef Name="IDChucVu" />
+            <PropertyRef Name="IDNVCV" />
           </Key>
           <Property Name="IDHopDong" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IDChucVu" Type="Int32" Nullable="false" />
@@ -587,24 +598,24 @@
           <Property Name="NgayKetThuc" Type="DateTime" Precision="0" />
           <Property Name="QuyetDinhSo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TinhTrang" Type="Boolean" />
+          <Property Name="IDNVCV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="ChucVu" Relationship="Self.FK_NhanVien_ChucVu_ChucVu" FromRole="NhanVien_ChucVu" ToRole="ChucVu" />
           <NavigationProperty Name="HoDongLaoDong" Relationship="Self.FK_NhanVien_ChucVu_HoDongLaoDong" FromRole="NhanVien_ChucVu" ToRole="HoDongLaoDong" />
         </EntityType>
         <EntityType Name="NhanVien_KyNang">
           <Key>
-            <PropertyRef Name="IDNhanVien" />
-            <PropertyRef Name="IDKyNang" />
+            <PropertyRef Name="IDNVKN" />
           </Key>
           <Property Name="IDNhanVien" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IDKyNang" Type="Int32" Nullable="false" />
           <Property Name="SoNamKinhNghiem" Type="Int32" />
+          <Property Name="IDNVKN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="KyNang" Relationship="Self.FK_NhanVien_KyNang_KyNang" FromRole="NhanVien_KyNang" ToRole="KyNang" />
           <NavigationProperty Name="NhanVien" Relationship="Self.FK_NhanVien_KyNang_NhanVien" FromRole="NhanVien_KyNang" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="NhanVien_PhongBan">
           <Key>
-            <PropertyRef Name="IDHopDong" />
-            <PropertyRef Name="IDPhongBan" />
+            <PropertyRef Name="IDNVPB" />
           </Key>
           <Property Name="IDHopDong" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IDPhongBan" Type="Int32" Nullable="false" />
@@ -612,13 +623,13 @@
           <Property Name="NgayKetThuc" Type="DateTime" Precision="0" />
           <Property Name="QuyetDinhSo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TinhTrang" Type="Boolean" />
+          <Property Name="IDNVPB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="HoDongLaoDong" Relationship="Self.FK_NhanVien_PhongBan_HoDongLaoDong" FromRole="NhanVien_PhongBan" ToRole="HoDongLaoDong" />
           <NavigationProperty Name="PhongBan" Relationship="Self.FK_NhanVien_PhongBan_PhongBan" FromRole="NhanVien_PhongBan" ToRole="PhongBan" />
         </EntityType>
         <EntityType Name="NhanVien_TrinhDo">
           <Key>
-            <PropertyRef Name="IDNhanVien" />
-            <PropertyRef Name="IDTrinhDo" />
+            <PropertyRef Name="IDNVTD" />
           </Key>
           <Property Name="IDNhanVien" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IDTrinhDo" Type="Int32" Nullable="false" />
@@ -626,6 +637,7 @@
           <Property Name="NoiDaoTao" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="NgayBatDau" Type="DateTime" Precision="0" />
           <Property Name="XepLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDNVTD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="NhanVien" Relationship="Self.FK_NhanVien_TrinhDo_NhanVien" FromRole="NhanVien_TrinhDo" ToRole="NhanVien" />
           <NavigationProperty Name="TrinhDoHocVan" Relationship="Self.FK_NhanVien_TrinhDo_TrinhDoHocVan" FromRole="NhanVien_TrinhDo" ToRole="TrinhDoHocVan" />
         </EntityType>
@@ -716,6 +728,18 @@
             </Principal>
             <Dependent Role="NhanVien_ChucVu">
               <PropertyRef Name="IDChucVu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DangNhap__IDNhan__33D4B598">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+          <End Role="DangNhap" Type="Self.DangNhap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="IDNhanVien" />
+            </Principal>
+            <Dependent Role="DangNhap">
+              <PropertyRef Name="IDNhanVien" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -827,11 +851,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLNSDataEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLNSDataEntitiesNewest" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BangTuKhais" EntityType="Self.BangTuKhai" />
           <EntitySet Name="ChiTietKhenThuongs" EntityType="Self.ChiTietKhenThuong" />
           <EntitySet Name="ChiTietKiLuats" EntityType="Self.ChiTietKiLuat" />
           <EntitySet Name="ChucVus" EntityType="Self.ChucVu" />
+          <EntitySet Name="DangNhaps" EntityType="Self.DangNhap" />
           <EntitySet Name="HoDongLaoDongs" EntityType="Self.HoDongLaoDong" />
           <EntitySet Name="KyNangs" EntityType="Self.KyNang" />
           <EntitySet Name="LoaiHopDongs" EntityType="Self.LoaiHopDong" />
@@ -867,6 +892,10 @@
           <AssociationSet Name="FK_NhanVien_ChucVu_ChucVu" Association="Self.FK_NhanVien_ChucVu_ChucVu">
             <End Role="ChucVu" EntitySet="ChucVus" />
             <End Role="NhanVien_ChucVu" EntitySet="NhanVien_ChucVu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DangNhap__IDNhan__33D4B598" Association="Self.FK__DangNhap__IDNhan__33D4B598">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="DangNhap" EntitySet="DangNhaps" />
           </AssociationSet>
           <AssociationSet Name="FK_HoDongLaoDong_LoaiHopDong" Association="Self.FK_HoDongLaoDong_LoaiHopDong">
             <End Role="LoaiHopDong" EntitySet="LoaiHopDongs" />
@@ -904,43 +933,15 @@
             <End Role="TrinhDoHocVan" EntitySet="TrinhDoHocVans" />
             <End Role="NhanVien_TrinhDo" EntitySet="NhanVien_TrinhDo" />
           </AssociationSet>
-          <EntitySet Name="DangNhaps" EntityType="QLNSDataModel.DangNhap" />
-          <AssociationSet Name="FK__DangNhap__IDNhan__4222D4EF" Association="QLNSDataModel.FK__DangNhap__IDNhan__4222D4EF">
-            <End Role="NhanVien" EntitySet="NhanViens" />
-            <End Role="DangNhap" EntitySet="DangNhaps" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="DangNhap">
-          <Key>
-            <PropertyRef Name="IDDangNhap" />
-          </Key>
-          <Property Name="IDDangNhap" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDNhanVien" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="TenDangNhap" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Quyen" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="NhanVien" Relationship="QLNSDataModel.FK__DangNhap__IDNhan__4222D4EF" FromRole="DangNhap" ToRole="NhanVien" />
-        </EntityType>
-        <Association Name="FK__DangNhap__IDNhan__4222D4EF">
-          <End Type="QLNSDataModel.NhanVien" Role="NhanVien" Multiplicity="1" />
-          <End Type="QLNSDataModel.DangNhap" Role="DangNhap" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NhanVien">
-              <PropertyRef Name="IDNhanVien" />
-            </Principal>
-            <Dependent Role="DangNhap">
-              <PropertyRef Name="IDNhanVien" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLNSDataModelStoreContainer" CdmEntityContainer="QLNSDataEntities">
+        <EntityContainerMapping StorageEntityContainer="QLNSDataModelNewestStoreContainer" CdmEntityContainer="QLNSDataEntitiesNewest">
           <EntitySetMapping Name="BangTuKhais">
-            <EntityTypeMapping TypeName="QLNSDataModel.BangTuKhai">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.BangTuKhai">
               <MappingFragment StoreEntitySet="BangTuKhai">
                 <ScalarProperty Name="IDTuKhai" ColumnName="IDTuKhai" />
                 <ScalarProperty Name="IDNhanVien" ColumnName="IDNhanVien" />
@@ -951,29 +952,31 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ChiTietKhenThuongs">
-            <EntityTypeMapping TypeName="QLNSDataModel.ChiTietKhenThuong">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.ChiTietKhenThuong">
               <MappingFragment StoreEntitySet="ChiTietKhenThuong">
                 <ScalarProperty Name="IDHopDong" ColumnName="IDHopDong" />
                 <ScalarProperty Name="IDKhenThuong" ColumnName="IDKhenThuong" />
                 <ScalarProperty Name="NgayQuyetDinh" ColumnName="NgayQuyetDinh" />
                 <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
                 <ScalarProperty Name="QuyetDinhSo" ColumnName="QuyetDinhSo" />
+                <ScalarProperty Name="IDCTKT" ColumnName="IDCTKT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ChiTietKiLuats">
-            <EntityTypeMapping TypeName="QLNSDataModel.ChiTietKiLuat">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.ChiTietKiLuat">
               <MappingFragment StoreEntitySet="ChiTietKiLuat">
                 <ScalarProperty Name="IDHopDong" ColumnName="IDHopDong" />
                 <ScalarProperty Name="IDKiLuat" ColumnName="IDKiLuat" />
                 <ScalarProperty Name="NgayQuyetDinh" ColumnName="NgayQuyetDinh" />
                 <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
                 <ScalarProperty Name="QuyetDinhSo" ColumnName="QuyetDinhSo" />
+                <ScalarProperty Name="IDCTKL" ColumnName="IDCTKL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ChucVus">
-            <EntityTypeMapping TypeName="QLNSDataModel.ChucVu">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.ChucVu">
               <MappingFragment StoreEntitySet="ChucVu">
                 <ScalarProperty Name="IDChucVu" ColumnName="IDChucVu" />
                 <ScalarProperty Name="TenChucVu" ColumnName="TenChucVu" />
@@ -982,8 +985,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="DangNhaps">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.DangNhap">
+              <MappingFragment StoreEntitySet="DangNhap">
+                <ScalarProperty Name="IDDangNhap" ColumnName="IDDangNhap" />
+                <ScalarProperty Name="IDNhanVien" ColumnName="IDNhanVien" />
+                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="Quyen" ColumnName="Quyen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="HoDongLaoDongs">
-            <EntityTypeMapping TypeName="QLNSDataModel.HoDongLaoDong">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.HoDongLaoDong">
               <MappingFragment StoreEntitySet="HoDongLaoDong">
                 <ScalarProperty Name="IDHopDong" ColumnName="IDHopDong" />
                 <ScalarProperty Name="IDNhanVien" ColumnName="IDNhanVien" />
@@ -998,7 +1012,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KyNangs">
-            <EntityTypeMapping TypeName="QLNSDataModel.KyNang">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.KyNang">
               <MappingFragment StoreEntitySet="KyNang">
                 <ScalarProperty Name="IDKyNang" ColumnName="IDKyNang" />
                 <ScalarProperty Name="TenKyNang" ColumnName="TenKyNang" />
@@ -1007,7 +1021,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LoaiHopDongs">
-            <EntityTypeMapping TypeName="QLNSDataModel.LoaiHopDong">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.LoaiHopDong">
               <MappingFragment StoreEntitySet="LoaiHopDong">
                 <ScalarProperty Name="IDLoaiHopDong" ColumnName="IDLoaiHopDong" />
                 <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
@@ -1015,7 +1029,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LoaiKhenThuongs">
-            <EntityTypeMapping TypeName="QLNSDataModel.LoaiKhenThuong">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.LoaiKhenThuong">
               <MappingFragment StoreEntitySet="LoaiKhenThuong">
                 <ScalarProperty Name="IDKhenThuong" ColumnName="IDKhenThuong" />
                 <ScalarProperty Name="TenKhenThuong" ColumnName="TenKhenThuong" />
@@ -1024,7 +1038,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LoaiKiLuats">
-            <EntityTypeMapping TypeName="QLNSDataModel.LoaiKiLuat">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.LoaiKiLuat">
               <MappingFragment StoreEntitySet="LoaiKiLuat">
                 <ScalarProperty Name="IDKiLuat" ColumnName="IDKiLuat" />
                 <ScalarProperty Name="TenKiLuat" ColumnName="TenKiLuat" />
@@ -1033,7 +1047,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanViens">
-            <EntityTypeMapping TypeName="QLNSDataModel.NhanVien">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
                 <ScalarProperty Name="IDNhanVien" ColumnName="IDNhanVien" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -1048,7 +1062,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanVien_ChucVu">
-            <EntityTypeMapping TypeName="QLNSDataModel.NhanVien_ChucVu">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.NhanVien_ChucVu">
               <MappingFragment StoreEntitySet="NhanVien_ChucVu">
                 <ScalarProperty Name="IDHopDong" ColumnName="IDHopDong" />
                 <ScalarProperty Name="IDChucVu" ColumnName="IDChucVu" />
@@ -1056,20 +1070,22 @@
                 <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
                 <ScalarProperty Name="QuyetDinhSo" ColumnName="QuyetDinhSo" />
                 <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="IDNVCV" ColumnName="IDNVCV" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanVien_KyNang">
-            <EntityTypeMapping TypeName="QLNSDataModel.NhanVien_KyNang">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.NhanVien_KyNang">
               <MappingFragment StoreEntitySet="NhanVien_KyNang">
                 <ScalarProperty Name="IDNhanVien" ColumnName="IDNhanVien" />
                 <ScalarProperty Name="IDKyNang" ColumnName="IDKyNang" />
                 <ScalarProperty Name="SoNamKinhNghiem" ColumnName="SoNamKinhNghiem" />
+                <ScalarProperty Name="IDNVKN" ColumnName="IDNVKN" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanVien_PhongBan">
-            <EntityTypeMapping TypeName="QLNSDataModel.NhanVien_PhongBan">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.NhanVien_PhongBan">
               <MappingFragment StoreEntitySet="NhanVien_PhongBan">
                 <ScalarProperty Name="IDHopDong" ColumnName="IDHopDong" />
                 <ScalarProperty Name="IDPhongBan" ColumnName="IDPhongBan" />
@@ -1077,11 +1093,12 @@
                 <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
                 <ScalarProperty Name="QuyetDinhSo" ColumnName="QuyetDinhSo" />
                 <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="IDNVPB" ColumnName="IDNVPB" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanVien_TrinhDo">
-            <EntityTypeMapping TypeName="QLNSDataModel.NhanVien_TrinhDo">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.NhanVien_TrinhDo">
               <MappingFragment StoreEntitySet="NhanVien_TrinhDo">
                 <ScalarProperty Name="IDNhanVien" ColumnName="IDNhanVien" />
                 <ScalarProperty Name="IDTrinhDo" ColumnName="IDTrinhDo" />
@@ -1089,11 +1106,12 @@
                 <ScalarProperty Name="NoiDaoTao" ColumnName="NoiDaoTao" />
                 <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
                 <ScalarProperty Name="XepLoai" ColumnName="XepLoai" />
+                <ScalarProperty Name="IDNVTD" ColumnName="IDNVTD" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PhongBans">
-            <EntityTypeMapping TypeName="QLNSDataModel.PhongBan">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.PhongBan">
               <MappingFragment StoreEntitySet="PhongBan">
                 <ScalarProperty Name="IDPhongBan" ColumnName="IDPhongBan" />
                 <ScalarProperty Name="TenPhongBan" ColumnName="TenPhongBan" />
@@ -1103,21 +1121,10 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TrinhDoHocVans">
-            <EntityTypeMapping TypeName="QLNSDataModel.TrinhDoHocVan">
+            <EntityTypeMapping TypeName="QLNSDataModelNewest.TrinhDoHocVan">
               <MappingFragment StoreEntitySet="TrinhDoHocVan">
                 <ScalarProperty Name="IDTrinhDo" ColumnName="IDTrinhDo" />
                 <ScalarProperty Name="TenTrinhDo" ColumnName="TenTrinhDo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DangNhaps">
-            <EntityTypeMapping TypeName="QLNSDataModel.DangNhap">
-              <MappingFragment StoreEntitySet="DangNhap">
-                <ScalarProperty Name="Quyen" ColumnName="Quyen" />
-                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
-                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
-                <ScalarProperty Name="IDNhanVien" ColumnName="IDNhanVien" />
-                <ScalarProperty Name="IDDangNhap" ColumnName="IDDangNhap" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

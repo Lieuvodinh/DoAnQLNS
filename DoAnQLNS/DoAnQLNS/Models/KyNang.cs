@@ -14,6 +14,7 @@ namespace DoAnQLNS.Models
     
     public partial class KyNang
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KyNang()
         {
             this.NhanVien_KyNang = new HashSet<NhanVien_KyNang>();
@@ -23,6 +24,7 @@ namespace DoAnQLNS.Models
         public string TenKyNang { get; set; }
         public string MoTa { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NhanVien_KyNang> NhanVien_KyNang { get; set; }
     }
 }

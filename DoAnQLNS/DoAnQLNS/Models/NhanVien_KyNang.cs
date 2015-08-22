@@ -17,6 +17,7 @@ namespace DoAnQLNS.Models
         public string IDNhanVien { get; set; }
         public int IDKyNang { get; set; }
         public Nullable<int> SoNamKinhNghiem { get; set; }
+        public int IDNVKN { get; set; }
     
         public virtual KyNang KyNang { get; set; }
         public virtual NhanVien NhanVien { get; set; }

@@ -14,6 +14,7 @@ namespace DoAnQLNS.Models
     
     public partial class LoaiKiLuat
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LoaiKiLuat()
         {
             this.ChiTietKiLuats = new HashSet<ChiTietKiLuat>();
@@ -23,6 +24,7 @@ namespace DoAnQLNS.Models
         public string TenKiLuat { get; set; }
         public string HinhThuc { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietKiLuat> ChiTietKiLuats { get; set; }
     }
 }

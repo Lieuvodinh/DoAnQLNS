@@ -1,0 +1,63 @@
+﻿@model IEnumerable<DoAnQLNS.Models.NhanVien_ChucVu>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayBatDau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayKetThuc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuyetDinhSo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TinhTrang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChucVu.TenChucVu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoDongLaoDong.IDNhanVien)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayBatDau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayKetThuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuyetDinhSo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinhTrang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChucVu.TenChucVu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoDongLaoDong.IDNhanVien)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDNVCV }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDNVCV }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDNVCV })
+        </td>
+    </tr>
+}
+
+</table>

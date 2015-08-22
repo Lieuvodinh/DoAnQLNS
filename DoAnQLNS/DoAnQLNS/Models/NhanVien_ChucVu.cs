@@ -20,6 +20,7 @@ namespace DoAnQLNS.Models
         public Nullable<System.DateTime> NgayKetThuc { get; set; }
         public string QuyetDinhSo { get; set; }
         public Nullable<bool> TinhTrang { get; set; }
+        public int IDNVCV { get; set; }
     
         public virtual ChucVu ChucVu { get; set; }
         public virtual HoDongLaoDong HoDongLaoDong { get; set; }

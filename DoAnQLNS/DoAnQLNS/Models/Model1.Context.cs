@@ -13,10 +13,10 @@ namespace DoAnQLNS.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QLNSDataEntities : DbContext
+    public partial class QLNSDataEntitiesNewest : DbContext
     {
-        public QLNSDataEntities()
-            : base("name=QLNSDataEntities")
+        public QLNSDataEntitiesNewest()
+            : base("name=QLNSDataEntitiesNewest")
         {
         }
     
@@ -29,6 +29,7 @@ namespace DoAnQLNS.Models
         public virtual DbSet<ChiTietKhenThuong> ChiTietKhenThuongs { get; set; }
         public virtual DbSet<ChiTietKiLuat> ChiTietKiLuats { get; set; }
         public virtual DbSet<ChucVu> ChucVus { get; set; }
+        public virtual DbSet<DangNhap> DangNhaps { get; set; }
         public virtual DbSet<HoDongLaoDong> HoDongLaoDongs { get; set; }
         public virtual DbSet<KyNang> KyNangs { get; set; }
         public virtual DbSet<LoaiHopDong> LoaiHopDongs { get; set; }
@@ -41,6 +42,5 @@ namespace DoAnQLNS.Models
         public virtual DbSet<NhanVien_TrinhDo> NhanVien_TrinhDo { get; set; }
         public virtual DbSet<PhongBan> PhongBans { get; set; }
         public virtual DbSet<TrinhDoHocVan> TrinhDoHocVans { get; set; }
-        public virtual DbSet<DangNhap> DangNhaps { get; set; }
     }
 }

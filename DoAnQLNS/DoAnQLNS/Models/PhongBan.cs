@@ -14,6 +14,7 @@ namespace DoAnQLNS.Models
     
     public partial class PhongBan
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PhongBan()
         {
             this.NhanVien_PhongBan = new HashSet<NhanVien_PhongBan>();
@@ -24,6 +25,7 @@ namespace DoAnQLNS.Models
         public string SDT { get; set; }
         public string Email { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NhanVien_PhongBan> NhanVien_PhongBan { get; set; }
     }
 }

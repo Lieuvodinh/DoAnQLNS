@@ -14,6 +14,7 @@ namespace DoAnQLNS.Models
     
     public partial class LoaiHopDong
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LoaiHopDong()
         {
             this.HoDongLaoDongs = new HashSet<HoDongLaoDong>();
@@ -22,6 +23,7 @@ namespace DoAnQLNS.Models
         public int IDLoaiHopDong { get; set; }
         public string TenLoai { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoDongLaoDong> HoDongLaoDongs { get; set; }
     }
 }

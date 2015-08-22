@@ -14,6 +14,7 @@ namespace DoAnQLNS.Models
     
     public partial class HoDongLaoDong
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HoDongLaoDong()
         {
             this.ChiTietKhenThuongs = new HashSet<ChiTietKhenThuong>();
@@ -32,11 +33,15 @@ namespace DoAnQLNS.Models
         public Nullable<int> IDLoaHopDong { get; set; }
         public Nullable<bool> TinhTrang { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietKhenThuong> ChiTietKhenThuongs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietKiLuat> ChiTietKiLuats { get; set; }
         public virtual LoaiHopDong LoaiHopDong { get; set; }
         public virtual NhanVien NhanVien { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NhanVien_ChucVu> NhanVien_ChucVu { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NhanVien_PhongBan> NhanVien_PhongBan { get; set; }
     }
 }

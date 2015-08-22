@@ -14,6 +14,7 @@ namespace DoAnQLNS.Models
     
     public partial class TrinhDoHocVan
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TrinhDoHocVan()
         {
             this.NhanVien_TrinhDo = new HashSet<NhanVien_TrinhDo>();
@@ -22,6 +23,7 @@ namespace DoAnQLNS.Models
         public int IDTrinhDo { get; set; }
         public string TenTrinhDo { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NhanVien_TrinhDo> NhanVien_TrinhDo { get; set; }
     }
 }
