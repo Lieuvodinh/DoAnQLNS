@@ -18,6 +18,13 @@ namespace DoAnQLNS
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "ChucVu", action = "Details", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "MyDefault2",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "NhanVien", action = "DSNV", id = UrlParameter.Optional }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
