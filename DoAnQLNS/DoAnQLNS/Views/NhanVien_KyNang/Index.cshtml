@@ -1,0 +1,112 @@
+﻿@model IEnumerable<DoAnQLNS.Models.NhanVien_KyNang>
+@{
+    ViewBag.Title = "DANH SÁCH NHÂN VIÊN KỸ NĂNG";
+}
+<div class="row-fluid">
+    @using (Html.BeginForm("NhanVienKyNang", null, FormMethod.Get))
+    {
+        <div class="span12">
+            <div class="row-fluid">
+                <a class="btn btn-primary" style="margin-bottom:5px" data-modal="" href="/NhanVien_KyNang/Create" id="btnCreate">Tạo mới</a>
+            </div>
+           
+            <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>ID Nhân Viên</th>
+                        <th>Tên Nhân Viên</th>
+                        <th>Kỹ Năng</th>
+                        <th>Năm Kinh Nghiệm</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.IDNhanVien
+                            </td>
+                            <td>
+                                @item.NhanVien.HoTen
+                            </td>
+                            <td>
+                                @item.KyNang.TenKyNang
+                            </td>
+                            <td>
+                                @item.SoNamKinhNghiem
+                            </td>
+                            <td>
+                                <div class="hidden-phone visible-desktop action-buttons">
+                                    @Html.Raw("<a class='green'  data-modal='' href='/NhanVien_KyNang/Edit/" + item.IDNVKN + "' id='" + item.IDNVKN + "' title='Sửa thông tin'><i class='icon-pencil bigger-130'></i> </a>")
+                                    @Html.Raw("<a class='red'  data-modal='' href='/NhanVien_KyNang/Delete/" + item.IDNVKN + "' id='" + item.IDNVKN + "' title='Xóa thông tin'><i class='icon-trash bigger-130'></i> </a>")
+
+                                </div>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div><!--/span-->
+    }
+</div>
+@section scripts{
+    @System.Web.Optimization.Scripts.Render("~/assets/js/phones.js")
+}
+<!-- modal placeholder-->
+<div id='myModal' class='modal fade'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*@model IEnumerable<DoAnQLNS.Models.NhanVien_KyNang>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SoNamKinhNghiem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KyNang.TenKyNang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhanVien.HoTen)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoNamKinhNghiem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KyNang.TenKyNang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhanVien.HoTen)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDNVKN }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDNVKN }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDNVKN })
+        </td>
+    </tr>
+}
+
+</table>*@

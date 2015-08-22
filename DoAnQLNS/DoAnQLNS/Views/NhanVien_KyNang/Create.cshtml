@@ -1,0 +1,118 @@
+﻿@model DoAnQLNS.Models.NhanVien_KyNang
+@{
+    Layout = null;
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <h4 class="header green lighter bigger">
+                <i class="icon-edit bigger-150"></i>
+                Thêm mới nhân viên kỹ năng
+            </h4>
+            <div class="space-6"></div>
+            @*<div class="form-group">
+                <label class="text-info">ID Nhân Viên: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.IDNhanVien, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.IDNhanVien)
+                    </div>
+                </div>
+            </div>*@
+            <div class="form-group">
+                <label class="text-info">Tên Nhân Viên: </label>
+                <div class="col-sm-9">
+                    @Html.DropDownList("IDNhanVien", String.Empty)
+                    <div>
+                        @Html.ValidationMessageFor(m => m.NhanVien.HoTen)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Kỹ Năng: </label>
+                <div class="col-sm-9">
+                    @Html.DropDownList("IDKyNang", String.Empty)
+                    <div>
+                        @Html.ValidationMessageFor(m => m.KyNang.TenKyNang)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Năm Kinh Nghiệm: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.SoNamKinhNghiem)
+                    <div>
+                        @Html.ValidationMessageFor(m => m.SoNamKinhNghiem)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>            <!-- /modal-body -->
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-success"> Lưu</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true"> Đóng</button>
+    </div>
+}
+
+
+
+
+@*@model DoAnQLNS.Models.NhanVien_KyNang
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>NhanVien_KyNang</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDNhanVien, "IDNhanVien", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDNhanVien", String.Empty)
+                @Html.ValidationMessageFor(model => model.IDNhanVien)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDKyNang, "IDKyNang", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDKyNang", String.Empty)
+                @Html.ValidationMessageFor(model => model.IDKyNang)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SoNamKinhNghiem, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SoNamKinhNghiem)
+                @Html.ValidationMessageFor(model => model.SoNamKinhNghiem)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+*@

@@ -165,6 +165,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\NhanVien_ChucVuController.cs" />
+    <Compile Include="Controllers\NhanVien_KyNangController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -571,6 +572,10 @@
     <Content Include="Views\Shared\_layout.cshtml" />
     <Content Include="Views\Shared\_loginPatial.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\NhanVien_KyNang\Create.cshtml" />
+    <Content Include="Views\NhanVien_KyNang\Delete.cshtml" />
+    <Content Include="Views\NhanVien_KyNang\Edit.cshtml" />
+    <Content Include="Views\NhanVien_KyNang\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
