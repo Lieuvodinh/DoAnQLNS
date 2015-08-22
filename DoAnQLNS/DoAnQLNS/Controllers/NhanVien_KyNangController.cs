@@ -52,6 +52,7 @@ namespace DoAnQLNS.Controllers
                         nvkn = nhanVien_KyNang;
                     }
                 }
+
                 db.NhanVien_KyNang.Add(nvkn);
                 db.SaveChanges();
                 return Json(new { success = true });
