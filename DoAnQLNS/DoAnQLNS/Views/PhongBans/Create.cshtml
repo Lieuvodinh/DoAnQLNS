@@ -1,0 +1,50 @@
+﻿@model DoAnQLNS.Models.PhongBan
+@{
+    Layout = null;
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <h4 class="header green lighter bigger">
+                <i class="icon-edit bigger-150"></i>
+                Thêm mới phòng ban
+            </h4>
+            @Html.ValidationSummary(true)
+            <div class="space-6"></div>
+            <div class="form-group">
+                <label class="text-info">Tên phòng ban: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.TenPhongBan, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.TenPhongBan)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Số điện thoại: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.SDT, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.SDT)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Email: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.Email)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>            <!-- /modal-body -->
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-success"> Lưu</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true"> Đóng</button>
+    </div>
+}
+

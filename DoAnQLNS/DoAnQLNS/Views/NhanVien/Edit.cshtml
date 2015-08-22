@@ -1,0 +1,103 @@
+﻿@model DoAnQLNS.Models.NhanVien
+@{
+    Layout = null;
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <h4 class="header green lighter bigger">
+                <i class="icon-edit bigger-150"></i>
+                Sửa thông tin nhân viên
+            </h4>
+            @Html.ValidationSummary(true)
+            <div class="space-6"></div>
+            <div class="form-group">
+                <label class="text-info">Mã nhân viên: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.IDNhanVien, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.IDNhanVien)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Tên nhân viên: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.HoTen, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.HoTen)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Số chứng minh nhân dân: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.CMND, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.CMND)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Giới tính: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.GioiTinh, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.GioiTinh)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Ngày sinh: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.NgaySinh, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.NgaySinh)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Nơi sinh: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.NoiSinh, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.NoiSinh)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Quê quán: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.QueQuan, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.QueQuan)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Địa chỉ: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.DiaChi, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.DiaChi)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-info">Hình ảnh: </label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.HinhAnh, new { @class = "span12" })
+                    <div>
+                        @Html.ValidationMessageFor(m => m.HinhAnh)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>            <!-- /modal-body -->
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-success"> Lưu</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true"> Đóng</button>
+    </div>
+}
