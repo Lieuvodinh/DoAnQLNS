@@ -170,6 +170,7 @@
     <Compile Include="Controllers\LoaiHopDongsController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
     <Compile Include="Controllers\NhanVien_ChucVuController.cs" />
+    <Compile Include="Controllers\NhanVien_PhongBanController.cs" />
     <Compile Include="Controllers\PhongBansController.cs" />
     <Compile Include="Controllers\NhanVien_KyNangController.cs" />
     <Compile Include="Global.asax.cs">
@@ -606,6 +607,10 @@
     <Content Include="Views\NhanVien_KyNang\Delete.cshtml" />
     <Content Include="Views\NhanVien_KyNang\Edit.cshtml" />
     <Content Include="Views\NhanVien_KyNang\Index.cshtml" />
+    <Content Include="Views\NhanVien_PhongBan\Create.cshtml" />
+    <Content Include="Views\NhanVien_PhongBan\Delete.cshtml" />
+    <Content Include="Views\NhanVien_PhongBan\Edit.cshtml" />
+    <Content Include="Views\NhanVien_PhongBan\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

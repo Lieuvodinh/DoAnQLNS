@@ -39,23 +39,17 @@ namespace DoAnQLNS.Controllers
         {
             if (ModelState.IsValid)
             {
-                NhanVien_KyNang nvkn = null;
                 List<NhanVien_KyNang> list = db.NhanVien_KyNang.ToList();
                 foreach (var item in list)
                 {
-                    if (nhanVien_KyNang.IDNhanVien==item.IDNhanVien && nhanVien_KyNang.IDKyNang == item.IDKyNang)
+                    if (nhanVien_KyNang.IDNhanVien == item.IDNhanVien && nhanVien_KyNang.IDKyNang == item.IDKyNang)
                     {
-                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                    }
-                    else
-                    {
-                        nvkn = nhanVien_KyNang;
+                        nhanVien_KyNang = null;
                     }
                 }
-
-                db.NhanVien_KyNang.Add(nvkn);
+                db.NhanVien_KyNang.Add(nhanVien_KyNang);
                 db.SaveChanges();
-                return Json(new { success = true });
+                return Json(new { success = true });   
             }
 
             ViewBag.IDKyNang = new SelectList(db.KyNangs, "IDKyNang", "TenKyNang", nhanVien_KyNang.IDKyNang);
